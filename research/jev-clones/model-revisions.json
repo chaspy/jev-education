@@ -1,0 +1,80 @@
+[
+  {
+    "repo": "convaiinnovations/laya",
+    "sha": "1c5edc17a7acd8701df6fc341c0d179f1c62c982",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "convaiinnovations/laya-multilingual",
+    "sha": "052592a15d198d9ad47da779604259b10b47b7aa",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "jhu-clsp/mmBERT-base",
+    "sha": "c5955035435e2bf121cde7f3c8863ef52ff35d82",
+    "license": "mit",
+    "gated": false
+  },
+  {
+    "repo": "answerdotai/ModernBERT-large",
+    "sha": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "jaredpalmer/kev-0.5b",
+    "sha": "edf1dc6d7f8d983c0adfd251e80a686e5539fc61",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "Qwen/Qwen2.5-0.5B",
+    "sha": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "bespokelabs/Bespoke-Nimble-9B",
+    "sha": "594dfdcfb6f94e3d0c0db7535180d3c71689169a",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "Qwen/Qwen3.5-9B",
+    "sha": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "AlexWortega/openjev",
+    "sha": "4b5f9a67fa2ebe77466bce0656ce350effc3148c",
+    "license": "mit",
+    "gated": false
+  },
+  {
+    "repo": "Qwen/Qwen3.5-4B",
+    "sha": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "Qwen/Qwen3.5-35B-A3B",
+    "sha": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "google/diffusiongemma-26B-A4B-it",
+    "sha": "f7f5b7f5fa82ffc52addd066915886d497f5517b",
+    "license": "apache-2.0",
+    "gated": false
+  },
+  {
+    "repo": "nvidia/diffusiongemma-26B-A4B-it-NVFP4",
+    "sha": "ec4ff3df205028f4e81c954c2227f9312b3ec2ea",
+    "license": "apache-2.0",
+    "gated": false
+  }
+]

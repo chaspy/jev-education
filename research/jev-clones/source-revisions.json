@@ -1,0 +1,28 @@
+[
+  {
+    "name": "laya",
+    "commit": "d113dca2512fb3eaca313534bc54c7162d87c1d4",
+    "remote": "https://github.com/NandhaKishorM/laya.git"
+  },
+  {
+    "name": "kev",
+    "commit": "20fa6268c8ceb226530be2fb5266ab2c36b37724",
+    "remote": "https://github.com/jaredpalmer/kev.git"
+  },
+  {
+    "name": "nimble",
+    "commit": "35fe1f4fdbc64fa3dbbf5ac0042f3f5680c1ad28",
+    "remote": "https://github.com/bespokelabsai/nimble.git"
+  },
+  {
+    "name": "jevlike",
+    "commit": "94f5fd1b0b11d52bbdfdf4e0ee6aa96b568f8452",
+    "remote": "https://github.com/vinnylarouge/jevlike.git"
+  },
+  {
+    "name": "diffusion-vllm-pr",
+    "commit": "ceb8eebf3eedddb964a50180f33838a9a6b13ee2",
+    "remote": "https://github.com/vllm-project/vllm/pull/57250",
+    "state": "open, unmerged"
+  }
+]

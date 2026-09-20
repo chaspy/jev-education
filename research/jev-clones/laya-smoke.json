@@ -1,0 +1,93 @@
+{
+  "model": "convaiinnovations/laya-multilingual",
+  "device": "mps",
+  "load_ms": 27383.376333998967,
+  "request": {
+    "model": "jev-latest",
+    "state": {
+      "goal": "分母をなくす操作を練習したい。",
+      "material": "x/2 + 3 = 7 の両辺に2を掛けると？"
+    },
+    "questions": {
+      "fits": {
+        "type": "noul",
+        "instructions": "教材は目的の操作を直接練習させますか？"
+      },
+      "subject": {
+        "type": "choice",
+        "instructions": "この教材の教科は？",
+        "criteria": {
+          "math": "数学",
+          "english": "英語",
+          "history": "歴史"
+        }
+      },
+      "difficulty": {
+        "type": "score",
+        "instructions": "式変形の段階数を評価してください。",
+        "criteria": [
+          "式変形なし",
+          "1回の式変形",
+          "複数回の式変形"
+        ]
+      }
+    }
+  },
+  "response": {
+    "model": "laya-rl-agent",
+    "answers": {
+      "fits": {
+        "type": "noul",
+        "noul": 0.3097,
+        "confidence": 0.6903,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "subject": {
+        "type": "choice",
+        "choice": "math",
+        "probabilities": {
+          "math": 0.9999,
+          "english": 0.0001,
+          "history": 0.0
+        },
+        "confidence": 0.9992,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "difficulty": {
+        "type": "score",
+        "score": 1.3935,
+        "legend": {
+          "0": "式変形なし",
+          "1": "1回の式変形",
+          "2": "複数回の式変形"
+        },
+        "probabilities": {
+          "0": 0.1133,
+          "1": 0.3799,
+          "2": 0.5068
+        },
+        "confidence": 0.1272,
+        "action": {
+          "act_probability": 1.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 224,
+      "output_tokens": 0
+    }
+  },
+  "elapsed_ms": [
+    2506.6912499987666,
+    67.25441700109513,
+    32.730582999647595,
+    32.84791599980963
+  ],
+  "warm_median_ms": 32.84791599980963,
+  "network_connect_blocked_during_inference": true,
+  "note": "1 Japanese case, 3 question types; not accuracy evaluation"
+}

@@ -1,0 +1,31 @@
+{
+  "model": "TinyScorer",
+  "device": "cpu",
+  "train_examples": 32,
+  "train_steps": 30,
+  "initial_loss": 1.4902198314666748,
+  "final_loss": 0.01651609316468239,
+  "total_ms": 632.6493750002555,
+  "input_example": {
+    "context": "Choose the exact badge green crane. Notes: south west south north west south west west. Badge: green crane.",
+    "options": [
+      "gold crane",
+      "green crane",
+      "coral falcon",
+      "green dolphin",
+      "indigo dolphin"
+    ],
+    "label": 1
+  },
+  "probabilities_example": [
+    0.001520979800261557,
+    0.9848052859306335,
+    0.013621193356812,
+    5.2435305406106636e-05,
+    1.920840708713456e-10,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "note": "Upstream synthetic train-on-batch smoke; NOT held-out generalization or pretrained language understanding"
+}

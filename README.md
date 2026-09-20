@@ -104,3 +104,7 @@ MaE公開データ151件の55分類ではTop-1 58.3%、Top-3 79.5%。
 
 別アプリとして `apps/benchmark-explorer/` に配置。`npm run explorer:dev` で http://localhost:4323 、
 `npm run explorer:deploy` で公開します。APIキーは不要です。
+
+## 調査記録
+
+- [Jevクローン6件：ローカル実行・ライセンス・スキーマ互換性](research/jev-clones/README.md)

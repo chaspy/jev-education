@@ -1,0 +1,70 @@
+{
+  "scope": "schema validation only, NOT inference or full SDK compatibility",
+  "results": [
+    {
+      "test": "kev: Jev request with all 3 primitives",
+      "accepted": true
+    },
+    {
+      "test": "diffusion: Jev request with all 3 primitives",
+      "accepted": true
+    },
+    {
+      "test": "nimble: unchanged Jev questions",
+      "accepted": false,
+      "error": "fits: supported types are enum and boolean."
+    },
+    {
+      "test": "nimble: explicitly converted schema",
+      "accepted": true
+    },
+    {
+      "test": "kev: previous 55-label task shape",
+      "accepted": true
+    },
+    {
+      "test": "diffusion: previous 55-label task shape",
+      "accepted": false,
+      "error": "question 'cause': at most 26 alternatives"
+    },
+    {
+      "test": "nimble: converted 55-label task",
+      "accepted": false,
+      "error": "cause: enum choices must be 1–26 nonempty strings."
+    }
+  ],
+  "nimble_converted_example": {
+    "fits": {
+      "type": "boolean",
+      "description": "教材は目的の操作を直接練習させますか？"
+    },
+    "subject": {
+      "type": "enum",
+      "description": "教科",
+      "choices": [
+        "math",
+        "english",
+        "history"
+      ],
+      "choice_descriptions": {
+        "math": "数学",
+        "english": "英語",
+        "history": "歴史"
+      }
+    },
+    "difficulty": {
+      "type": "enum",
+      "description": "式変形の段階数",
+      "choices": [
+        "0",
+        "1",
+        "2"
+      ],
+      "choice_descriptions": {
+        "0": "式変形なし",
+        "1": "1回の式変形",
+        "2": "複数回の式変形"
+      }
+    }
+  }
+}
