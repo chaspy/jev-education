@@ -94,3 +94,13 @@ MaE公開データ151件の55分類ではTop-1 58.3%、Top-3 79.5%。
 [授業文脈に合う教材検索の予備実験](benchmarks/material-search/RESULTS.md)では、
 教科書範囲・授業実績・既習事項・形式・時間を揃えて検索とJevの追加効果を比較しています。
 教師評価用のシートも同梱しています（評価は未実施）。
+
+## 実験をブラウザで追う
+
+[教材検索の実験を追う](https://jev-education-benchmark-explorer.take-she12.workers.dev)
+では、具体例・授業の入力文脈・検索候補・条件で除外した理由・Jevの確率・採点用ラベルを切り替えて確認できます。
+足切り値を動かして全34ケースを再集計できます。保存ログの再生なので、新しい推論や課金はありません。
+[保存用HTML](https://jev-education-benchmark-explorer.take-she12.workers.dev/standalone.html)もあり、オフラインで開けます。
+
+別アプリとして `apps/benchmark-explorer/` に配置。`npm run explorer:dev` で http://localhost:4323 、
+`npm run explorer:deploy` で公開します。APIキーは不要です。
