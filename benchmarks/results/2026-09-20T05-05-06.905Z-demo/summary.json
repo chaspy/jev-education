@@ -1,0 +1,322 @@
+{
+  "runId": "2026-09-20T05-05-06.905Z-demo",
+  "suite": "demo",
+  "startedAt": "2026-09-20T05:05:06.906Z",
+  "gitRevision": "2867f8e637bea132698b5eab32e00f9aa7deda69",
+  "gitDirty": true,
+  "protocol": {
+    "version": "1.0",
+    "model": "jev-1.13.0",
+    "maeTask": "Zero-shot 55-way misconception classification from question, incorrect answer and reference correct answer. No topic restriction or example demonstrations.",
+    "candidateOrder": "MaE ID lexicographic",
+    "abstention": {
+      "minimumConfidence": 0.5,
+      "minimumMaxProbability": 0.65
+    },
+    "primaryMetrics": [
+      "top1",
+      "top3",
+      "macroF1",
+      "coverage",
+      "selectiveAccuracy"
+    ],
+    "baselines": [
+      "TF-IDF cosine over the same candidate descriptions",
+      "majority label learned from dev split"
+    ],
+    "devUsedFor": "majority baseline only; no prompt or threshold tuning",
+    "appSuite": "author-created Japanese regression cases on the three existing demo questions; not an independent benchmark and not educator-reviewed",
+    "errorPolicy": "Stop on first transport/API/schema failure; preserve completed rows; no silent retry or fabricated predictions",
+    "repeats": 1,
+    "limitations": [
+      "MaE English task is not the Japanese app",
+      "Agreement with original labels does not establish pedagogical correctness",
+      "Wilson interval is descriptive and does not account for clustered examples",
+      "No evidence of learning gains, graph validity, or best remediation"
+    ]
+  },
+  "protocolSha256": "16de91ce44ec8db4d58906179cbe322f0f89d4178c89d25afaec3698c37fa7e1",
+  "datasetSha256": "0a1af95145333cde64bc486fda86c2d17ae70f820f784c5e455d73280f551cf5",
+  "requestSetSha256": "3b8f9923ab738f98183f68016debf5f0e5e817eebfdb0caff3bfeec8c09c323b",
+  "expectedCases": 36,
+  "sourceFiles": {
+    "run.mjs": "85632ff9fc84cb22f70a48e68156b69ad5a9558dcba31830a51dd8cb3afba7c5",
+    "requests.mjs": "77873ff4e4f1aed830895a4a0bf7246882024fcf8a8b4d8ccab7a9c1c00eadd7",
+    "metrics.mjs": "3d75b4a20df6bbadd9b5e14ab428ea6ec238820ad81253d52984f06d3f6e815a",
+    "baselines.mjs": "86c25a85a21ccb2a061823f900cc0f52ccc14d4414cf7a3ad24f36b272fbc0e9",
+    "../apps/learning-path/src/diagnosis.mjs": "d70d6bac6fe4bb62b9a270869c372c0b964baf3eb78992273373efb4fa7bf315",
+    "../apps/learning-path/public/content.js": "c0e96396158fd5ca11fe820493817c0f4c0ef11c3ec528fcd27cb6be500b1f19"
+  },
+  "completedAt": "2026-09-20T05:05:15.592Z",
+  "status": "complete",
+  "jev": {
+    "count": 36,
+    "top1Count": 36,
+    "top1": 1,
+    "top3": 1,
+    "mrrAt3": 1,
+    "macroF1": 1,
+    "top1Wilson95": [
+      0.9035781695514236,
+      1
+    ],
+    "accepted": 26,
+    "abstained": 10,
+    "coverage": 0.7222222222222222,
+    "selectiveAccuracy": 1,
+    "perClass": {
+      "correct": {
+        "total": 9,
+        "correct": 9
+      },
+      "distribution": {
+        "total": 2,
+        "correct": 2
+      },
+      "transpose": {
+        "total": 6,
+        "correct": 6
+      },
+      "balance": {
+        "total": 3,
+        "correct": 3
+      },
+      "incomplete": {
+        "total": 3,
+        "correct": 3
+      },
+      "unknown": {
+        "total": 9,
+        "correct": 9
+      },
+      "signed-multiply": {
+        "total": 2,
+        "correct": 2
+      },
+      "fraction": {
+        "total": 2,
+        "correct": 2
+      }
+    },
+    "confusion": {
+      "correct": {
+        "correct": 9
+      },
+      "distribution": {
+        "distribution": 2
+      },
+      "transpose": {
+        "transpose": 6
+      },
+      "balance": {
+        "balance": 3
+      },
+      "incomplete": {
+        "incomplete": 3
+      },
+      "unknown": {
+        "unknown": 9
+      },
+      "signed-multiply": {
+        "signed-multiply": 2
+      },
+      "fraction": {
+        "fraction": 2
+      }
+    },
+    "errors": []
+  },
+  "baselines": {
+    "rule": {
+      "count": 36,
+      "top1Count": 24,
+      "top1": 0.6666666666666666,
+      "top3": 0.6666666666666666,
+      "mrrAt3": 0.6666666666666666,
+      "macroF1": 0.6083333333333334,
+      "top1Wilson95": [
+        0.5033369709296683,
+        0.7978557522541395
+      ],
+      "accepted": 15,
+      "abstained": 21,
+      "coverage": 0.4166666666666667,
+      "selectiveAccuracy": 1,
+      "perClass": {
+        "correct": {
+          "total": 9,
+          "correct": 6
+        },
+        "distribution": {
+          "total": 2,
+          "correct": 2
+        },
+        "transpose": {
+          "total": 6,
+          "correct": 4
+        },
+        "balance": {
+          "total": 3,
+          "correct": 0
+        },
+        "incomplete": {
+          "total": 3,
+          "correct": 0
+        },
+        "unknown": {
+          "total": 9,
+          "correct": 9
+        },
+        "signed-multiply": {
+          "total": 2,
+          "correct": 1
+        },
+        "fraction": {
+          "total": 2,
+          "correct": 2
+        }
+      },
+      "confusion": {
+        "correct": {
+          "correct": 6,
+          "unknown": 3
+        },
+        "distribution": {
+          "distribution": 2
+        },
+        "transpose": {
+          "transpose": 4,
+          "unknown": 2
+        },
+        "balance": {
+          "unknown": 3
+        },
+        "incomplete": {
+          "unknown": 3
+        },
+        "unknown": {
+          "unknown": 9
+        },
+        "signed-multiply": {
+          "signed-multiply": 1,
+          "unknown": 1
+        },
+        "fraction": {
+          "fraction": 2
+        }
+      },
+      "errors": [
+        {
+          "id": "brackets-02",
+          "expected": [
+            "correct"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "brackets-08",
+          "expected": [
+            "balance"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "brackets-09",
+          "expected": [
+            "incomplete"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "negative-17",
+          "expected": [
+            "signed-multiply"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "negative-20",
+          "expected": [
+            "balance"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "negative-21",
+          "expected": [
+            "incomplete"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "fractions-26",
+          "expected": [
+            "correct"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "fractions-27",
+          "expected": [
+            "correct"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "fractions-30",
+          "expected": [
+            "transpose"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "fractions-31",
+          "expected": [
+            "transpose"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "fractions-32",
+          "expected": [
+            "balance"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        },
+        {
+          "id": "fractions-33",
+          "expected": [
+            "incomplete"
+          ],
+          "predicted": "unknown",
+          "abstained": true
+        }
+      ]
+    }
+  },
+  "latencyMs": {
+    "p50": 225,
+    "p95": 320
+  },
+  "totalCostUsd": 0.002301222,
+  "usage": {
+    "input": 54791,
+    "output": 3206
+  },
+  "abstentionSafety": {
+    "shouldAbstain": 9,
+    "actuallyAbstained": 9,
+    "falseAssertions": []
+  }
+}

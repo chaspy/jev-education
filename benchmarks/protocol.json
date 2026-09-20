@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "model": "jev-1.13.0",
+  "maeTask": "Zero-shot 55-way misconception classification from question, incorrect answer and reference correct answer. No topic restriction or example demonstrations.",
+  "candidateOrder": "MaE ID lexicographic",
+  "abstention": { "minimumConfidence": 0.5, "minimumMaxProbability": 0.65 },
+  "primaryMetrics": ["top1", "top3", "macroF1", "coverage", "selectiveAccuracy"],
+  "baselines": ["TF-IDF cosine over the same candidate descriptions", "majority label learned from dev split"],
+  "devUsedFor": "majority baseline only; no prompt or threshold tuning",
+  "appSuite": "author-created Japanese regression cases on the three existing demo questions; not an independent benchmark and not educator-reviewed",
+  "errorPolicy": "Stop on first transport/API/schema failure; preserve completed rows; no silent retry or fabricated predictions",
+  "repeats": 1,
+  "limitations": ["MaE English task is not the Japanese app", "Agreement with original labels does not establish pedagogical correctness", "Wilson interval is descriptive and does not account for clustered examples", "No evidence of learning gains, graph validity, or best remediation"]
+}
