@@ -1,0 +1,22 @@
+{
+ "version":1,
+ "model":"jev-1.13.0",
+ "corpusSize":40,
+ "devQueries":8,
+ "testQueries":34,
+ "candidateLimit":12,
+ "displayLimit":3,
+ "acceptanceThreshold":0.65,
+ "retrieval":"BM25 over Japanese character bigrams; query=assignment goal + actual lesson summary + curriculum text; documents=title+body; k1=1.2,b=0.75; ID tie-break",
+ "variants":["retrieval: original top3", "filtered: original top12, exact metadata filters, original order, top3", "jevRanked: same eligible candidates reranked by Noul, top3 without cutoff", "jevSelected: same reranking with Noul>=0.65, top3"],
+ "knownRules":"Grade, subject, format, estimated duration and authored prerequisite tags checked in code, not delegated to Jev",
+ "semanticJudgment":"Does material directly practice or explain the actual lesson assignment goal? One independent Noul per candidate, batched per query",
+ "gold":"Authored target-topic match AND metadata constraints; fixed before API calls. No teacher review, no measured acceptance or time savings.",
+ "split":"signed-add and letter topic families are dev; all other topic families and missing-topic queries are test. No tuning on either split.",
+ "noMatch":"8 test explanation queries with a 1-minute budget plus 2 missing-topic queries. Report separately: metadata impossibility versus semantic mismatch.",
+ "metrics":["candidate recall@12", "top1,success@3,nDCG@3 on answerable queries", "display precision", "constraint violations", "no-match false recommendation rate", "local search/filter time", "API p50/p95, input/output tokens and total/mean query cost"],
+ "concurrency":1,
+ "repeats":1,
+ "failurePolicy":"Stop on first HTTP/schema failure, preserve raw outputs, no retries or fallback scores",
+ "limitations":["Only 40 original demo materials; not 20k production resources", "Contexts, tags, durations and gold authored by the same assistant; no independent pedagogical validation", "Queries share material content and topic definitions; family split is not an unseen-corpus generalization test", "Binary suitability ignores preferences among acceptable materials", "Small related query families, no independent-sample significance claim", "No teacher search-time savings or student learning outcomes measured"]
+}
