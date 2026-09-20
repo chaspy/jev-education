@@ -80,3 +80,10 @@ HTTP／形式エラーがあれば停止。`calls.jsonl`に生のAPI出力、`pr
 
 今回の設計は[TypeSafeのreranking例](https://docs.typesafe.ai/cookbooks/rerank_typesafe)と
 [Noul仕様](https://docs.typesafe.ai/primitives/noul)を参照。モデルの入力状態・質問をログで確認できる。
+
+## 初回結果と教師レビュー
+
+[測定結果](RESULTS.md)。条件フィルター後の先頭適合は19/24、Jev並べ替え後は21/24。
+ただし仮ラベルの粗さがあるため、実用精度とは扱わない。
+`node benchmarks/material-search/export-review.mjs` で、モデル判定と仮ラベルを含まない
+[教師評価用CSV](teacher-review.csv)を再生成できる。評価は未実施。

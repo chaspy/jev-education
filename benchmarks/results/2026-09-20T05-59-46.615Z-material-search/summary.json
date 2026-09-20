@@ -1,0 +1,275 @@
+{
+  "runId": "2026-09-20T05-59-46.615Z-material-search",
+  "startedAt": "2026-09-20T05:59:46.616Z",
+  "protocol": {
+    "version": 1,
+    "model": "jev-1.13.0",
+    "corpusSize": 40,
+    "devQueries": 8,
+    "testQueries": 34,
+    "candidateLimit": 12,
+    "displayLimit": 3,
+    "acceptanceThreshold": 0.65,
+    "retrieval": "BM25 over Japanese character bigrams; query=assignment goal + actual lesson summary + curriculum text; documents=title+body; k1=1.2,b=0.75; ID tie-break",
+    "variants": [
+      "retrieval: original top3",
+      "filtered: original top12, exact metadata filters, original order, top3",
+      "jevRanked: same eligible candidates reranked by Noul, top3 without cutoff",
+      "jevSelected: same reranking with Noul>=0.65, top3"
+    ],
+    "knownRules": "Grade, subject, format, estimated duration and authored prerequisite tags checked in code, not delegated to Jev",
+    "semanticJudgment": "Does material directly practice or explain the actual lesson assignment goal? One independent Noul per candidate, batched per query",
+    "gold": "Authored target-topic match AND metadata constraints; fixed before API calls. No teacher review, no measured acceptance or time savings.",
+    "split": "signed-add and letter topic families are dev; all other topic families and missing-topic queries are test. No tuning on either split.",
+    "noMatch": "8 test explanation queries with a 1-minute budget plus 2 missing-topic queries. Report separately: metadata impossibility versus semantic mismatch.",
+    "metrics": [
+      "candidate recall@12",
+      "top1,success@3,nDCG@3 on answerable queries",
+      "display precision",
+      "constraint violations",
+      "no-match false recommendation rate",
+      "local search/filter time",
+      "API p50/p95, input/output tokens and total/mean query cost"
+    ],
+    "concurrency": 1,
+    "repeats": 1,
+    "failurePolicy": "Stop on first HTTP/schema failure, preserve raw outputs, no retries or fallback scores",
+    "limitations": [
+      "Only 40 original demo materials; not 20k production resources",
+      "Contexts, tags, durations and gold authored by the same assistant; no independent pedagogical validation",
+      "Queries share material content and topic definitions; family split is not an unseen-corpus generalization test",
+      "Binary suitability ignores preferences among acceptable materials",
+      "Small related query families, no independent-sample significance claim",
+      "No teacher search-time savings or student learning outcomes measured"
+    ]
+  },
+  "gitRevision": "4840c31ee2d3d939fd6bd0cdd40485b6241e4dd6",
+  "dataSha256": "e3034ba53491756282528e1d9fa453200a331625168d22554c9568a0030983da",
+  "requestSetSha256": "7a822e026159618b1e2fddc5d1a9f55a1557202d5785b6839ee75a489277ccc3",
+  "sourceFiles": {
+    "prepare.mjs": "2f202f953f9bd42223dfaa7243aadf9264495b693951331788d9163b24c7ade4",
+    "core.mjs": "71a7fa8e74542e29f1dfc1f0b3ffe946378bd4ca3424eb6ae0ce77f001f7c780",
+    "run.mjs": "208f9d855a728dd40c69fa9c2c7ef143fa4b3d49cd0a574f47d691a59920f586",
+    "../metrics.mjs": "3d75b4a20df6bbadd9b5e14ab428ea6ec238820ad81253d52984f06d3f6e815a"
+  },
+  "status": "complete",
+  "completedAt": "2026-09-20T05:59:53.113Z",
+  "metrics": {
+    "retrieval": {
+      "queries": 34,
+      "answerable": 24,
+      "noMatch": 10,
+      "top1": 0.25,
+      "successAt3": 0.4583333333333333,
+      "ndcgAt3": 0.35097960561215064,
+      "displayed": 102,
+      "displayPrecision": 0.10784313725490197,
+      "constraintViolations": 89,
+      "noMatchFalseRecommendationRate": 1,
+      "noMatchFalseRecommendations": 10
+    },
+    "filtered": {
+      "queries": 34,
+      "answerable": 24,
+      "noMatch": 10,
+      "top1": 0.7916666666666666,
+      "successAt3": 0.875,
+      "ndcgAt3": 0.8137800530823851,
+      "displayed": 60,
+      "displayPrecision": 0.5166666666666667,
+      "constraintViolations": 0,
+      "noMatchFalseRecommendationRate": 0.2,
+      "noMatchFalseRecommendations": 2
+    },
+    "jevRanked": {
+      "queries": 34,
+      "answerable": 24,
+      "noMatch": 10,
+      "top1": 0.875,
+      "successAt3": 0.875,
+      "ndcgAt3": 0.8431099734588073,
+      "displayed": 60,
+      "displayPrecision": 0.5333333333333333,
+      "constraintViolations": 0,
+      "noMatchFalseRecommendationRate": 0.2,
+      "noMatchFalseRecommendations": 2
+    },
+    "jevSelected": {
+      "queries": 34,
+      "answerable": 24,
+      "noMatch": 10,
+      "top1": 0.8333333333333334,
+      "successAt3": 0.8333333333333334,
+      "ndcgAt3": 0.75,
+      "displayed": 29,
+      "displayPrecision": 0.896551724137931,
+      "constraintViolations": 0,
+      "noMatchFalseRecommendationRate": 0,
+      "noMatchFalseRecommendations": 0
+    }
+  },
+  "noMatchByKind": {
+    "unavailable": {
+      "retrieval": {
+        "queries": 8,
+        "answerable": 0,
+        "noMatch": 8,
+        "top1": null,
+        "successAt3": null,
+        "ndcgAt3": null,
+        "displayed": 24,
+        "displayPrecision": 0,
+        "constraintViolations": 24,
+        "noMatchFalseRecommendationRate": 1,
+        "noMatchFalseRecommendations": 8
+      },
+      "filtered": {
+        "queries": 8,
+        "answerable": 0,
+        "noMatch": 8,
+        "top1": null,
+        "successAt3": null,
+        "ndcgAt3": null,
+        "displayed": 0,
+        "displayPrecision": null,
+        "constraintViolations": 0,
+        "noMatchFalseRecommendationRate": 0,
+        "noMatchFalseRecommendations": 0
+      },
+      "jevRanked": {
+        "queries": 8,
+        "answerable": 0,
+        "noMatch": 8,
+        "top1": null,
+        "successAt3": null,
+        "ndcgAt3": null,
+        "displayed": 0,
+        "displayPrecision": null,
+        "constraintViolations": 0,
+        "noMatchFalseRecommendationRate": 0,
+        "noMatchFalseRecommendations": 0
+      },
+      "jevSelected": {
+        "queries": 8,
+        "answerable": 0,
+        "noMatch": 8,
+        "top1": null,
+        "successAt3": null,
+        "ndcgAt3": null,
+        "displayed": 0,
+        "displayPrecision": null,
+        "constraintViolations": 0,
+        "noMatchFalseRecommendationRate": 0,
+        "noMatchFalseRecommendations": 0
+      }
+    },
+    "missing-topic": {
+      "retrieval": {
+        "queries": 2,
+        "answerable": 0,
+        "noMatch": 2,
+        "top1": null,
+        "successAt3": null,
+        "ndcgAt3": null,
+        "displayed": 6,
+        "displayPrecision": 0,
+        "constraintViolations": 6,
+        "noMatchFalseRecommendationRate": 1,
+        "noMatchFalseRecommendations": 2
+      },
+      "filtered": {
+        "queries": 2,
+        "answerable": 0,
+        "noMatch": 2,
+        "top1": null,
+        "successAt3": null,
+        "ndcgAt3": null,
+        "displayed": 6,
+        "displayPrecision": 0,
+        "constraintViolations": 0,
+        "noMatchFalseRecommendationRate": 1,
+        "noMatchFalseRecommendations": 2
+      },
+      "jevRanked": {
+        "queries": 2,
+        "answerable": 0,
+        "noMatch": 2,
+        "top1": null,
+        "successAt3": null,
+        "ndcgAt3": null,
+        "displayed": 6,
+        "displayPrecision": 0,
+        "constraintViolations": 0,
+        "noMatchFalseRecommendationRate": 1,
+        "noMatchFalseRecommendations": 2
+      },
+      "jevSelected": {
+        "queries": 2,
+        "answerable": 0,
+        "noMatch": 2,
+        "top1": null,
+        "successAt3": null,
+        "ndcgAt3": null,
+        "displayed": 0,
+        "displayPrecision": null,
+        "constraintViolations": 0,
+        "noMatchFalseRecommendationRate": 0,
+        "noMatchFalseRecommendations": 0
+      }
+    }
+  },
+  "candidateRecall": {
+    "count": 24,
+    "mean": 0.8333333333333334,
+    "p50": 1,
+    "p95": 1
+  },
+  "apiCalls": 25,
+  "skippedQueries": 9,
+  "scoredPairs": 78,
+  "latencyMs": {
+    "retrieval": {
+      "count": 34,
+      "mean": 1.5528357352941173,
+      "p50": 1.3049999999999926,
+      "p95": 1.745834000000002
+    },
+    "filtered": {
+      "count": 34,
+      "mean": 1.5626335294117641,
+      "p50": 1.3107919999999922,
+      "p95": 1.7590419999999938
+    },
+    "api": {
+      "count": 25,
+      "mean": 258.4,
+      "p50": 246,
+      "p95": 329
+    },
+    "endToEnd": {
+      "count": 34,
+      "mean": 191.5626335294118,
+      "p50": 202.562,
+      "p95": 330.759042
+    }
+  },
+  "cost": {
+    "totalUsd": 0.002213484,
+    "perQueryUsd": {
+      "count": 34,
+      "mean": 0.00006510247058823529,
+      "p50": 0.00007039200000000001,
+      "p95": 0.000129612
+    },
+    "perAPICallUsd": {
+      "count": 25,
+      "mean": 0.00008853936,
+      "p50": 0.00008353800000000001,
+      "p95": 0.000129612
+    }
+  },
+  "tokens": {
+    "input": 52702,
+    "output": 1426
+  }
+}
