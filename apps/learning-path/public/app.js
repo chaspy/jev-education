@@ -60,17 +60,27 @@ function reset() {
   $('expression').textContent = current.expression;
   $('work').value = '';
   $('examples').replaceChildren();
-  for (const example of current.examples) {
-    const button = el('button', example.label); button.type = 'button';
-    button.addEventListener('click', () => { if (!busy) { $('work').value = example.text; $('work').focus(); } });
+  $('custom-input').open = false;
+  for (const [index, example] of current.examples.entries()) {
+    const button = el('button', undefined, 'answer-sample'); button.type = 'button';
+    button.setAttribute('aria-label', `答案${String.fromCharCode(65 + index)}の戻り先を探す`);
+    button.setAttribute('aria-pressed', 'false');
+    button.append(el('span', `答案 ${String.fromCharCode(65 + index)}`, 'sample-name'), el('span', example.text, 'sample-work'), el('span', 'この答案で試す →', 'sample-action'));
+    button.addEventListener('click', () => {
+      if (busy) return;
+      $('work').value = example.text;
+      document.querySelectorAll('#examples button').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      $('form').requestSubmit();
+    });
     $('examples').append(button);
   }
-  $('flow').replaceChildren(el('h3', '途中式から、戻り先の候補を探します。'), el('p', 'サンプルを選ぶか、自分の解き方を入力してください。マップの各項目から教材を直接見ることもできます。'));
+  $('flow').replaceChildren(el('h3', 'まずは、答案カードを押してみてください。'), el('p', '入力は不要です。同じ問題でも、答案によって戻り先が変わる様子を試せます。'));
   drawMap();
 }
 for (const p of problems) { const option = el('option', p.title); option.value = p.id; $('problem').append(option); }
 $('problem').addEventListener('change', () => { current = problems.find(p => p.id === $('problem').value); reset(); });
 $('work').addEventListener('input', () => {
+  document.querySelectorAll('#examples button').forEach(b => b.setAttribute('aria-pressed', 'false'));
   if (result) { $('status').textContent = '入力を変更しました。表示中の結果は前回の答案に対するものです。'; }
 });
 
@@ -92,7 +102,7 @@ $('form').addEventListener('submit', async event => {
     if (!response.ok) throw new Error(data.error || '判定に失敗しました。');
     if (version !== generation) return;
     result = { ...data, totalMs: Math.round(performance.now() - started), observedAt: new Date().toISOString() };
-    $('status').textContent = '判定が届きました。確認問題で確かめましょう。';
+    $('status').textContent = '戻り先の候補が出ました。次は学習者役で確認問題を試せます。';
     renderResult();
   } catch (error) {
     result = null;
@@ -147,7 +157,7 @@ function action(parent, title, handler, primary = false) {
 function showCheck(id) {
   const skill = skillById[id];
   $('learning').hidden = true; $('retry').hidden = true;
-  const flow = $('flow'); flow.replaceChildren(el('span', 'まずは1問、確かめる', 'eyebrow'), el('h3', skill.check.prompt));
+  const flow = $('flow'); flow.replaceChildren(el('span', '学習者の体験 / 確認問題を試す', 'eyebrow'), el('h3', skill.check.prompt));
   const choices = el('div', undefined, 'choices');
   skill.check.choices.forEach((choice, index) => {
     const b = action(choices, choice, () => {
