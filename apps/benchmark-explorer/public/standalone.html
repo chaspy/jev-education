@@ -4,21 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f6f7f9">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-beTdvyf4OsMw1o/bvlI+M5NpB4pWzvdEs44XkXOH2vM=' 'sha256-7wcL73YRwbv0IeXjToVBVCwFS7p4uVVMVUHvJZH/QGg=' 'sha256-V+J2+tdj8PKjs6pnD6/t0vHZQJx4nRMhGamL4yGqaA0='; style-src 'sha256-UIPKabszU8SyXUkgh7dnPAgV/AoWLeeOXo6AeePZlyM='; img-src data:; object-src 'none'; base-uri 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-beTdvyf4OsMw1o/bvlI+M5NpB4pWzvdEs44XkXOH2vM=' 'sha256-7wcL73YRwbv0IeXjToVBVCwFS7p4uVVMVUHvJZH/QGg=' 'sha256-4wrZS3yFp1htAqLXJl0fsIeNk5VBSj3hAMpzq716V2E='; style-src 'sha256-uSYbjLV3eXJP872NjoSLuXAwcstWFaiwDeF0bscF+EI='; img-src data:; object-src 'none'; base-uri 'none'">
   <title>教材検索の実験を追う — jev-education</title>
   <style>:root{color-scheme:light;--bg:#f6f7f9;--surface:#fff;--ink:#192837;--muted:#586878;--line:#dce3ea;--blue:#2449c7;--blue-soft:#eef2ff;--green:#157557;--green-soft:#eaf7f0;--orange:#925019;--orange-soft:#fff3e5;--red:#a33b3b}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.75 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}button,input,select{font:inherit}button,select,a,input{ -webkit-tap-highlight-color:transparent}button{cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 13px;color:var(--ink)}button:hover{border-color:var(--blue);background:var(--blue-soft)}button:disabled{opacity:.4;cursor:default}a{color:var(--blue);text-underline-offset:3px}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #8aafff;outline-offset:3px}.topbar{padding:17px max(24px,calc((100vw - 1120px)/2));display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);gap:20px;background:var(--surface)}.brand{text-decoration:none;color:var(--ink);font-weight:750;white-space:nowrap}.brand span{font-weight:400;color:var(--muted);font-size:13px}nav{display:flex;gap:20px;font-size:13px}nav a{text-decoration:none}main{max-width:1120px;margin:auto;padding:32px 24px}section{margin-bottom:52px}.intro{max-width:920px;margin-bottom:34px}h1{font-size:clamp(24px,3vw,34px);line-height:1.45;letter-spacing:-.025em;margin:6px 0 12px}h2{font-size:21px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}p{margin:8px 0 12px}.eyebrow{font-size:12px;letter-spacing:.05em;color:var(--muted);margin:0 0 8px}.finding{display:flex;gap:18px;border-left:3px solid var(--blue);background:var(--blue-soft);padding:14px 18px;margin-top:18px;font-size:14px}.finding>b{white-space:nowrap;color:var(--blue)}.section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}.section-title h2,.section-title h3{margin:0}.tag,.tags span{font-size:12px;border:1px solid var(--line);padding:3px 9px;border-radius:5px;display:inline-block;background:var(--surface)}.featured{display:flex;gap:8px;flex-wrap:wrap}.featured button{font-size:13px;text-align:left}.featured button.active{border-color:var(--blue);color:var(--blue);background:var(--blue-soft)}.case-picker{display:flex;gap:16px;align-items:center;margin:16px 0}.case-picker label{font-size:13px;white-space:nowrap}.case-picker select{padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:0;max-width:100%}.case-note{background:var(--orange-soft);border:1px solid #eddbc3;padding:12px 16px;border-radius:8px;font-size:14px;margin-bottom:18px}.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.context-card{padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;min-width:0}.context-card h3{font-size:18px;line-height:1.7}.tags{display:flex;flex-wrap:wrap;gap:6px}details{margin-top:14px}summary{color:var(--blue);cursor:pointer;font-size:13px;font-weight:600}dl{font-size:13px}dt{font-weight:700;margin-top:12px}dd{margin:4px 0;color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere}.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:24px 0 20px}.pipeline button{text-align:left;position:relative;padding:13px;line-height:1.5}.pipeline .step-number{font-size:11px;color:var(--muted);display:block;margin-bottom:5px}.pipeline .step-count{display:block;font-weight:750;font-size:19px;margin-top:4px}.pipeline button.active{border:2px solid var(--blue);padding:12px;background:var(--blue-soft);color:var(--blue)}.pipeline button.active .step-number{color:var(--blue)}.stage-heading{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.stage-heading>div:first-child{max-width:790px}.stage-heading p{font-size:14px;color:var(--muted)}.stage-controls{display:flex;gap:6px;flex-shrink:0}.stage-summary{font-size:13px;border-radius:6px;background:#e9edf2;padding:10px 14px;margin:8px 0 15px}.materials{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.material{display:flex;flex-direction:column;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0;position:relative}.material.excluded{background:#eff1f4;color:#68727c}.material .card-top{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:11px;color:var(--muted)}.material h4{font-size:14px;margin:9px 0}.material .body{white-space:pre-wrap;font-size:14px;overflow-wrap:anywhere;flex:1;margin:7px 0 12px;max-height:150px;overflow:auto}.material .open-material{text-align:left;color:var(--blue);padding:5px 0;border:0;background:transparent;font-size:12px}.material .status{font-size:11px;color:var(--green);background:var(--green-soft);padding:3px 6px;border-radius:4px}.material .status.bad{color:var(--muted);background:#edf0f3}.material .reason{font-size:12px;color:var(--red);margin:5px 0}.probability{font-size:12px;display:flex;gap:8px;align-items:center;margin-top:8px}.probability progress{width:100%;height:7px;accent-color:var(--blue)}.probability strong{font-variant-numeric:tabular-nums;min-width:35px;text-align:right}.none{grid-column:1/-1;border:1px dashed var(--line);padding:26px;border-radius:10px;background:#fff;text-align:center;color:var(--muted)}.case-comparison{margin-top:26px}.comparison{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.comparison>div{border:1px solid var(--line);border-radius:8px;background:#fff;padding:14px;font-size:13px;min-width:0}.comparison p{margin:6px 0}.comparison .method-label{font-size:11px;color:var(--muted)}.pass{color:var(--green)}.fail{color:var(--orange)}.raw{padding:16px;border:1px solid var(--line);border-radius:8px;background:#fff}.raw p{font-size:13px}.raw-content pre,pre{font:12px/1.7 ui-monospace,SFMono-Regular,monospace;background:#152333;color:#dce6f3;padding:18px;border-radius:8px;overflow:auto;max-height:400px;white-space:pre-wrap;overflow-wrap:anywhere}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}table{border-collapse:collapse;width:100%;min-width:650px;font-size:13px}caption{text-align:left;padding:13px 16px;color:var(--muted);font-size:12px}th,td{text-align:left;padding:13px 16px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}thead th{background:#edf1f6;font-size:12px}tbody tr:nth-child(3){background:var(--blue-soft)}.threshold-panel{background:#fff;border:1px solid var(--line);border-radius:12px;margin-top:24px;padding:22px}.threshold-panel label{display:flex;align-items:center;justify-content:space-between;margin-top:18px;font-size:14px}output{font-size:26px;color:var(--blue);font-weight:750;font-variant-numeric:tabular-nums}input[type=range]{display:block;width:100%;margin:16px 0;accent-color:var(--blue);min-height:28px}.muted{font-size:12px;color:var(--muted)}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.metric{border-left:2px solid var(--line);padding-left:14px}.metric span{display:block;font-size:12px;color:var(--muted)}.metric strong{display:block;font-size:24px;margin:5px 0;font-variant-numeric:tabular-nums}.metric small{font-size:11px;color:var(--muted)}.cost-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.cost-grid article{background:#edf1f6;padding:18px;border-radius:10px}.cost-grid strong{font-size:24px;display:block;font-variant-numeric:tabular-nums}.cost-grid p{font-size:12px;margin:5px 0;color:var(--muted)}.limit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.limit-grid article{border-top:1px solid var(--line);padding:18px 0}.limit-grid p{font-size:14px;color:var(--muted)}.number{font-size:12px;color:var(--blue);font-weight:700}.method{background:#fff;border:1px solid var(--line);padding:24px;border-radius:12px}.method ol{padding-left:23px;font-size:14px}.method li{margin:10px 0}.method p{font-size:12px;color:var(--muted)}footer{max-width:1120px;padding:12px 24px 30px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:12px;color:var(--muted)}dialog{max-width:760px;width:calc(100% - 32px);max-height:85vh;border:1px solid var(--line);border-radius:14px;padding:26px;color:var(--ink)}dialog::backdrop{background:#10203380}.dialog-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.dialog-top h2{font-size:18px}.dialog-top button{white-space:nowrap}#dialog-body .full-body{white-space:pre-wrap;background:var(--bg);padding:18px;border-radius:8px;overflow-wrap:anywhere}.mobile-break{display:none}@media(max-width:800px){.materials{grid-template-columns:repeat(2,1fr)}.comparison{grid-template-columns:repeat(2,1fr)}.pipeline{gap:5px}.pipeline button{font-size:12px;padding:10px}.pipeline button.active{padding:9px}.pipeline .step-count{font-size:17px}.stage-heading{flex-direction:column;gap:0}.stage-controls{align-self:flex-end;margin-bottom:12px}}@media(max-width:560px){.topbar{padding:14px 16px;align-items:flex-start;gap:10px}.brand{font-size:13px}.brand span{display:block;font-size:11px}nav{gap:10px;font-size:11px;flex-wrap:wrap;justify-content:flex-end}main{padding:24px 16px}h1{font-size:25px}.mobile-break{display:initial}.intro p{font-size:14px}.finding{display:block;font-size:13px;padding:12px}.finding>b{display:block;margin-bottom:4px}.section-title h2{font-size:19px}.featured{display:grid;grid-template-columns:1fr 1fr}.featured button{padding:9px;font-size:12px}.case-picker{display:block}.case-picker label{display:block;margin-bottom:6px}.case-picker select{width:100%}.context-grid{grid-template-columns:1fr}.context-card{padding:17px}.context-card h3{font-size:16px}.pipeline{display:flex;overflow-x:auto;padding-bottom:5px}.pipeline button{min-width:105px;flex:1}.materials{grid-template-columns:1fr}.material .body{max-height:130px}.metric-grid{grid-template-columns:1fr 1fr;gap:20px}.cost-grid{grid-template-columns:1fr}.limit-grid{grid-template-columns:1fr}.threshold-panel{padding:17px}.threshold-panel .section-title button{font-size:12px}.comparison{gap:8px}.comparison>div{padding:10px;font-size:12px}.method{padding:18px}footer{padding:12px 16px 26px}dialog{padding:18px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.lesson-section{background:white;border:1px solid var(--line);border-radius:12px;padding:26px;margin-bottom:26px}.lesson-section>p{max-width:900px}.lesson-section blockquote{margin:20px 0;padding:18px 22px;background:var(--blue-soft);border-left:3px solid var(--blue);font-size:18px;font-weight:650}.story-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.story-pair article{padding:18px;background:var(--bg);border-radius:10px}.story-pair h3{margin-top:10px}.story-pair p{font-size:14px}.experiment-steps li,.implications li{margin:12px 0}.advanced{margin:24px 0 36px;border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px}.advanced>summary{font-size:15px}.advanced>section{margin:24px 0 0}.scoring{border-left:4px solid #cf9e51}.story-controls{display:flex;justify-content:space-between;margin-top:22px}.story-controls button{min-height:44px}.story-controls #story-next{background:var(--blue);color:white}#story-content{min-height:240px}#story-content h3{font-size:21px}#story-content .story-value{font-size:26px;font-weight:750;color:var(--blue)}.guided{border:2px solid #b7c6f5}.results>.finding{margin-bottom:22px}.intro{margin-bottom:26px}.implications{background:var(--blue-soft)}@media(max-width:560px){.lesson-section{padding:18px}.story-pair{grid-template-columns:1fr}.lesson-section blockquote{font-size:16px;padding:14px}.advanced{padding:13px}#story-content{min-height:330px}.lesson-section h2{font-size:20px}.finding span{display:block}}
 </style>
 </head>
 <body>
-  <header class="topbar"><a href="#" class="brand">jev-education <span>/ 実験ノート</span></a><nav><a href="#experiment">具体例</a><a href="#results">全体結果</a><a href="standalone.html" download="教材検索の実験.html">HTMLを保存 ↓</a></nav></header>
+  <header class="topbar"><a href="#" class="brand">jev-education <span>/ 実験ノート</span></a><nav><a href="#walkthrough">具体例</a><a href="#results">全体結果</a><a href="standalone.html" download="教材検索の実験.html">HTMLを保存 ↓</a></nav></header>
   <main>
     <section class="intro">
-      <p class="eyebrow">教材の適合判定 · 2026.09.20</p>
-      <h1>先生の授業に合う教材を、<br class="mobile-break">Jevは選べたか。</h1>
-      <p>授業の文脈から教材40件を検索。条件で絞ったあと、Jevの判定を加える効果を調べた実験です。<strong>先生による評価前の、仮ラベルとの比較</strong>です。</p>
-      <div class="finding"><b>今回分かったこと</b><span>条件フィルターだけで先頭の適合は <strong>19 / 24件</strong>。Jevで並べ替えると <strong>21 / 24件</strong>。差は2件でした。</span></div>
+      <p class="eyebrow">何を実験したのか</p>
+      <h1>授業に合う問題を探すとき、<br>Jevを足す意味はある？</h1>
+      <p>先生が「今日の授業の復習問題を探したい」と依頼する場面を作りました。<strong>普通の検索と条件チェックに、AIによる内容の判断を加えると、教材の選び方が良くなるか</strong>を調べています。</p>
+      <p>生徒の間違いの原因を当てる実験とは別です。今回は、先生の依頼と教材の内容を照合しました。</p>
     </section>
-    <section id="experiment" aria-labelledby="experiment-heading">
+    <section class="lesson-section" id="hypothesis">
+      <p class="eyebrow">1 / 仮説</p><h2>言葉が似ている教材より、目的に合う教材を上に出せるのでは？</h2>
+      <blockquote>先生：「分数を含む方程式で、全ての項に同じ数を掛けて分母をなくす操作を練習させたい。2分以内の問題を探して。」</blockquote>
+      <p>検索は文章の似た教材を集められます。しかし、同じ「方程式」の問題でも、練習する操作は違います。</p>
+      <div class="story-pair"><article><span class="tag">教材A</span><h3>3x = 12 を解こう。</h3><p>両辺を3で割る練習。方程式の問題ですが、分母をなくす操作はありません。</p></article><article><span class="tag">教材B</span><h3>x/2 + 3 = 7 の両辺に2を掛けると？</h3><p>分母をなくすときに、全ての項に掛けられるかを確認できます。</p></article></div>
+      <div class="finding"><b>検証した仮説</b><span>先生の授業内容と教材本文をJevに渡せば、候補の中から<strong>Bのような教材を先頭に上げられるのではないか。</strong></span></div>
+    </section>
+    <section class="lesson-section" id="design">
+      <p class="eyebrow">2 / 実験方法</p><h2>同じ依頼・同じ候補で、Jevを加える前後を比べた</h2>
+      <div class="story-pair"><article><h3>用意したもの</h3><p>自作の数学教材40件と、架空の先生の依頼34件。教科書の範囲、指導要領、授業計画、実際に説明した内容、既習事項、形式、時間を用意しました。</p><p>実在の先生の依頼や、市販教科書・スタディサプリの教材は使っていません。</p></article><article><h3>Jevに聞いたこと</h3><p>「この教材は、先生が今回練習させたい内容に直接合っていますか？」</p><p>教材ごとに『合う』と見込む値を0〜1で返してもらいました。問題を生成したり、生徒の理解度を推測したりはしていません。</p></article></div>
+      <ol class="experiment-steps"><li><b>検索：</b>教材40件から、文章の一致を使って12件に絞る。</li><li><b>条件チェック：</b>時間オーバー、形式違い、必要な知識が未習の教材などをコードで除く。</li><li><b>比較：</b>残りを検索順位のまま見せる場合と、Jevの判断で並べ替える場合を比較する。</li></ol>
+      <p>Jevに渡す候補を増やしたわけではありません。<strong>同じ候補の順番を変えることに価値があるか</strong>を比べました。</p>
+    </section>
+    <section class="lesson-section scoring" id="scoring">
+      <p class="eyebrow">3 / 何を「正解」としたか</p><h2>実験前に、こちらで「合う教材のリスト」を作った</h2>
+      <p>それぞれの依頼について、<strong>①目標と同じ学習項目を扱い、②時間・形式・既習事項などの条件を満たす教材</strong>を正解としました。複数の教材が正解になる依頼もあります。</p>
+      <p>さきほどの例なら、Bは「分母を払う」という項目に属するので正解。Aは「等式の性質」の項目なので、この採点基準では対象外です。</p>
+      <div class="finding"><b>大事な限界</b><span>このリストは<strong>僕が作った採点用の答え合わせ表</strong>です。先生に妥当性を確認してもらったものではありません。以前「仮ラベル」と呼んでいたのは、この表の判定です。</span></div>
+      <p>「対象外」は悪い教材という意味ではありません。<strong>今回の依頼に対し、この採点方法では正解に数えなかった</strong>という意味です。後で、この採点方法自体が粗い例も見つかりました。</p>
+    </section>
+    <section class="lesson-section guided" id="walkthrough">
+      <p class="eyebrow">4 / 実例を順に見る</p><h2>分母をなくす問題を探した1件</h2>
+      <p>下の「次へ」で、先生の依頼から結果まで順に追えます。実験の記録を使って説明しています。</p>
+      <div id="story-progress" class="eyebrow"></div><div id="story-content" aria-live="polite"></div>
+      <div class="story-controls"><button type="button" id="story-prev">← 戻る</button><button type="button" id="story-next">次へ →</button></div>
+    </section>
+    <details id="experiment" class="advanced"><summary>さらに詳しく：他の具体例・全候補・実際のAPI入力を見る</summary><section aria-labelledby="experiment-heading">
       <div class="section-title"><h2 id="experiment-heading">1つの授業ケースを追ってみる</h2><span class="tag">保存した実測ログを再生</span></div>
       <div id="featured" class="featured" aria-label="代表例"></div>
       <div class="case-picker"><label for="case-select">全34ケースから選ぶ</label><select id="case-select"></select></div>
@@ -32,29 +59,37 @@
       <div id="stage-summary" class="stage-summary" aria-live="polite"></div>
       <div id="materials" class="materials"></div>
       <div class="case-comparison"><h3>このケースの「先頭」はどう変わった？</h3><div id="comparison" class="comparison"></div></div>
-      <details class="raw"><summary>実際のAPI入力・出力を見る</summary><p>選んだケースの元ログです。正解タグ・仮ラベルはJevへのリクエストに含めていません。APIキーも含みません。</p><div id="raw-content"></div></details>
+      <details class="raw"><summary>実際のAPI入力・出力を見る</summary><p>選んだケースの元ログです。採点用の分類や正解一覧はJevへのリクエストに含めていません。APIキーも含みません。</p><div id="raw-content"></div></details>
     </section>
+    </details>
     <section id="results" class="results" aria-labelledby="results-heading">
-      <div class="section-title"><h2 id="results-heading">全34ケースで見る</h2><span class="tag">適合教材あり24件 / 該当なし10件</span></div>
-      <p>「先頭が適合」は、表示された最初の教材が仮ラベル上の正解に含まれること。教材がある24ケースだけで数えます。</p>
-      <div class="table-wrap"><table><caption>実験時の固定条件での成績</caption><thead><tr><th>方法</th><th>先頭が適合</th><th>上位3件に適合あり</th><th>条件違反</th><th>該当なしへの誤推薦</th></tr></thead><tbody id="results-body"></tbody></table></div>
-      <div class="threshold-panel">
+      <div class="section-title"><h2 id="results-heading">5 / 全体の結果</h2><span class="tag">適合教材あり24件 / 該当なし10件</span></div>
+      <p>34件の依頼のうち、こちらの採点表で正解教材があるのは24件。残り10件は「この教材集には合うものがない」依頼です。まず24件について、最初に出した教材が採点表の正解に入っていたかを数えました。</p>
+      <div class="finding"><b>主な比較結果</b><span>検索＋条件チェックでは<strong>19 / 24件</strong>。Jevで並べ替えると<strong>21 / 24件</strong>。最初の教材が正解になる依頼が、<strong>2件増えました</strong>。</span></div><div class="table-wrap"><table><caption>実験時の固定条件での成績</caption><thead><tr><th>方法</th><th>最初の教材が採点表の正解</th><th>3件以内に採点表の正解</th><th>条件違反</th><th>該当なしへの誤推薦</th></tr></thead><tbody id="results-body"></tbody></table></div>
+      <details class="advanced"><summary>追加実験：自信が低い候補を隠すとどうなる？</summary><div class="threshold-panel">
         <div class="section-title"><h3>低い確率の教材を隠すと、どうなる？</h3><button id="reset-threshold" type="button">実験値 0.65 に戻す</button></div>
         <label for="threshold">提示する適合確率の下限 <output id="threshold-value" for="threshold">0.65</output></label>
         <input id="threshold" type="range" min="0" max="1" step="0.01" value="0.65">
-        <p class="muted">保存済みのNoul値で再集計します。再推論はしません。実験時に固定した値は0.65です。高いほど表示を絞りますが、使える教材も隠す可能性があります。</p>
+        <p class="muted">保存したJevの判定値を使って、表示する教材を変えます。APIは呼びません。実験で使った下限は0.65です。高いほど表示を絞りますが、使える教材も隠す可能性があります。</p>
         <div id="threshold-stats" class="metric-grid" aria-live="polite"></div>
       </div>
+      </details>
       <div class="cost-grid" id="costs"></div>
       <p class="muted">費用は入力100万tokensあたり$0.042、出力無料で推定。時間は当時のAPI実測です。このページの表示速度ではありません。40教材の小規模実験なので、2万教材への効果は未測定です。</p>
     </section>
-    <section class="limits"><h2>この数字で言えること・まだ言えないこと</h2><div class="limit-grid">
-      <article><span class="number">01</span><h3>大半の改善は、コードの条件処理</h3><p>教科・学年・形式・時間・既習事項はコードでチェックしました。Jevに任せたのは、残った教材が学習目標の内容に合うか、という判断です。</p></article>
-      <article><span class="number">02</span><h3>検索が落とした正解は取り戻せない</h3><p>24ケース中3件では、上位12件に正解教材がありませんでした。Jevは候補の外を探しません。検索と判定の課題は別です。</p></article>
-      <article><span class="number">03</span><h3>仮の正解ラベルにも粗さがある</h3><p>今回は「目標タグが同じ＋条件を満たす」を正解としました。同じ単元でも必要な操作が違う教材があります。タグによる採点と、先生の実際の適合判断は一致するとは限りません。</p></article>
-      <article><span class="number">04</span><h3>時間短縮や学習効果は、次の評価</h3><p>授業ケース・タグ・所要時間は自作です。先生の採用率、教材を探す時間、生徒の理解向上は測っていません。教材と文脈は公開データと自作素材だけで構成しています。</p></article>
+    <section class="limits"><p class="eyebrow">6 / 結果をどう読むか</p><h2>分かったことは、3つある</h2><div class="limit-grid">
+      <article><span class="number">01</span><h3>まず、条件チェックがよく効いた</h3><p>検索だけでは、最初の教材が正解だったのは6件。時間・形式・前提知識をコードで確認すると19件になりました。大きな改善はAIではなく、明示的な条件を処理した効果です。</p></article>
+      <article><span class="number">02</span><h3>Jevには小さな追加効果があった</h3><p>条件チェック後の19件が21件になりました。ただし、3件以内に正解を含む依頼の数は21件のまま。正解を新しく見つけたというより、既に候補にあった正解を先頭へ動かした効果です。</p></article>
+      <article><span class="number">03</span><h3>正解が検索から漏れると、Jevでは救えない</h3><p>3件では、正解教材が検索上位12件に残りませんでした。Jevに見せなかった教材は選べません。この実験では、検索方法を改善する余地もありました。</p></article>
+      <article><span class="number">注意</span><h3>答え合わせ表にも、直すべき点があった</h3><p>「かっこを含む方程式の練習」という依頼に、かっこのない「2x + 4 = 10」も同じ単元だから正解としました。Jevは低く評価しましたが、これは採点表の方が粗い可能性があります。</p></article>
     </div></section>
-    <section class="method"><h2>実験の作り方</h2><ol><li>公開自作教材から、説明10件・確認問題10件・練習問題20件を用意。</li><li>教科書範囲、指導要領、授業計画、実施内容、既習事項、目標、形式、時間を記した架空の授業ケースを作成。</li><li>8件を開発用、34件を評価用に分割。同じ単元のケースは両方に混ぜず、今回は調整に使わなかった。</li><li>仮ラベル・検索・質問・足切り値をcommitで固定してから、jev-1.13.0を実行。</li><li>検索だけ／条件処理／Jevの並べ替え／確率で非表示、の4条件を同じ候補で比較。</li></ol><p>学習指導要領の出典は <a href="https://jp-cos.github.io/LowerSecondary/2017/" target="_blank" rel="noreferrer">学習指導要領LOD</a>（元資料：文部科学省、CC BY 4.0）。教材と架空の授業ケースは chaspy / jev-education、CC BY 4.0。コードはMIT。</p></section>
+    <section class="lesson-section implications"><p class="eyebrow">7 / 事業としての示唆</p><h2>安く速く候補を並べる仕組みは動いた。役立つかの判断はまだ先。</h2>
+      <p>JevのAPI処理は中央値約0.25秒。今回の全実験の推定費用は約0.0022ドルでした。少数の検索候補について内容を判定する処理としては、今回の規模で動作を確認できました。</p>
+      <p>ただし、<strong>先生が探す時間を短縮できた、実際の教材選びが87.5%正しい、とは言えません。</strong>先生は評価に参加しておらず、扱った教材も40件だけです。</p>
+      <ol><li><b>まず採点を確かめる：</b>先生に文脈と教材を見てもらい、「この授業で使えるか」を評価してもらう。</li><li><b>次に検索の取りこぼしを減らす：</b>適切な教材を候補に残せる検索と、Jevによる並べ替えを分けて評価する。</li><li><b>最後に業務上の価値を測る：</b>先生が教材を決めるまでの時間と、選んだ教材の採用率を比較する。</li></ol>
+      <div class="finding"><b>今回の結論</b><span><strong>Jevを足す価値の小さな手掛かりは得られたが、採用を決める根拠にはまだ足りない。</strong>次に必要なのは、モデルを調整する前に、先生が納得できる答え合わせ表を作ることです。</span></div>
+    </section>
+    <section class="method"><h2>実験の作り方</h2><ol><li>公開自作教材から、説明10件・確認問題10件・練習問題20件を用意。</li><li>教科書範囲、指導要領、授業計画、実施内容、既習事項、目標、形式、時間を記した架空の授業ケースを作成。</li><li>8件を開発用、34件を評価用に分割。同じ単元のケースは両方に混ぜず、今回は調整に使わなかった。</li><li>実験用の採点判定・検索・質問・足切り値をcommitで固定してから、jev-1.13.0を実行。</li><li>検索だけ／条件処理／Jevの並べ替え／確率で非表示、の4条件を同じ候補で比較。</li></ol><p>学習指導要領の出典は <a href="https://jp-cos.github.io/LowerSecondary/2017/" target="_blank" rel="noreferrer">学習指導要領LOD</a>（元資料：文部科学省、CC BY 4.0）。教材と架空の授業ケースは chaspy / jev-education、CC BY 4.0。コードはMIT。</p></section>
   </main>
   <footer><a href="https://github.com/chaspy/jev-education/blob/main/benchmarks/material-search/RESULTS.md" target="_blank" rel="noreferrer">詳しい報告・全ログ ↗</a><span>正解ラベルは教師レビュー前 · 新しい推論は実行しません</span></footer>
   <dialog id="material-dialog"><div class="dialog-top"><h2 id="dialog-title"></h2><button id="close-dialog" type="button" aria-label="教材詳細を閉じる">閉じる ×</button></div><div id="dialog-body"></div></dialog>
@@ -108,9 +143,9 @@
   const featured = [
     {id:'t029',label:'改善した例：分母を払う',note:'検索＋条件フィルターでは、等式操作の別教材が先頭でした。Jevは「分母を払う」確認問題を先頭へ上げました。'},
     {id:'t005',label:'改善した例：符号の乗除',note:'足し引きの教材が先頭に残っていました。Jevが掛け算・割り算の教材を上に並べ替えた例です。'},
-    {id:'t025',label:'検索で正解が漏れた例',note:'移項の正解教材は、最初の検索上位12件に入っていません。Jevは候補外を探せません。等式の性質の教材を使えるかには、仮ラベルの境界の問題もあります。'},
+    {id:'t025',label:'検索で正解が漏れた例',note:'移項の正解教材は、最初の検索上位12件に入っていません。Jevは候補外を探せません。等式の性質の教材を使えるかには、採点用の基準の境界の問題もあります。'},
     {id:'t041',label:'該当教材がない例',note:'三角形の角度を扱う教材は、この40件に存在しません。候補の確率を低く付けても、順位だけなら表示されます。足切り値で非表示にする違いを確認できます。'},
-    {id:'t035',label:'仮ラベルが粗い例',note:'「かっこや項の整理」の目標に対し、仮ラベルは同単元の単純な方程式も正解としました。Jevが低く評価したことを、ただちにモデルの誤りとは言えません。'},
+    {id:'t035',label:'採点用の基準が粗い例',note:'「かっこや項の整理」の目標に対し、採点用の基準は同単元の単純な方程式も正解としました。Jevが低く評価したことを、ただちにモデルの誤りとは言えません。'},
     {id:'t032',label:'コードだけで除外する例',note:'1分以内の説明教材という条件を満たす候補がありません。コードの条件フィルターで全て落ちるので、Jev APIは呼んでいません。'}
   ];
   let selectedCase = cases.has(new URLSearchParams(location.search).get('case')) ? new URLSearchParams(location.search).get('case') : 't029';
@@ -120,7 +155,7 @@
     '実験の対象は、この公開自作教材40件。教材本文・模範解答・形式・想定時間を持っています。実際の2万教材を使った実験ではありません。',
     '先生の目標・授業実績・指導要領の文章を検索文にして、タイトルと本文を文字の一致で検索しました（BM25）。全40件から上位12件だけを残します。ここではJevを使いません。',
     '学年・教科・教材形式・時間・前提知識の条件をコードで確認します。除外された候補を灰色にして、理由を表示しています。この処理にもJevは不要です。',
-    '条件を通った同じ候補について、授業の具体的な目標に直接合うかをJevに質問しました。各候補のNoul値は「適合する」の確率です。別のconfidence値はありません。',
+    '条件を通った同じ候補について、授業の具体的な目標に直接合うかをJevに質問しました。Jevは各候補について「この依頼に合う」と見込む値を0〜1で返します。値が高くても、先生の評価で正しいと保証されるわけではありません。',
     '保存した適合確率が足切り値以上の教材を、最大3件提示します。高い値にすると候補は減ります。候補がなくなれば「該当なし」です。下のスライダーで再集計できます。'
   ];
   $('featured').innerHTML = featured.map(f => `<button type="button" data-case="${f.id}">${esc(f.label)}</button>`).join('');
@@ -159,7 +194,7 @@
     const m=materials.get(id),gold=q.judgments[id],prob=row.ranked.find(p=>p.id===id)?.probability;
     const excluded=stage===2&&!row.candidates.includes(id);
     const original=row.shortlist.findIndex(p=>p.id===id);
-    return `<article class="material ${excluded?'excluded':''}" data-card-id="${id}"><div class="card-top"><span>${stage===0?'教材':`${index+1}位`} · ${id}</span><span>${m.minutes}分 / ${m.format==='exercise'?'問題':'説明'}</span></div><h4>${esc(m.title)}</h4><div class="body">${esc(m.body)}</div>${stage===1?`<div class="muted">検索スコア ${row.shortlist.find(p=>p.id===id).score.toFixed(2)}（確率ではありません）</div>`:''}${stage>=3&&prob!==undefined?`<div class="probability"><span>適合</span><progress value="${prob}" max="1" aria-label="適合確率 ${prob.toFixed(2)}"></progress><strong>${prob.toFixed(2)}</strong></div><div class="muted">元の検索順位：${original+1}位</div>`:''}${stage===2?`<div class="reason">${excluded?gold.violations.map(v=>esc(reasons[v])).join(' / '):'条件通過'}</div>`:''}<div><span class="status ${gold.relevant?'':'bad'}">仮ラベル：${gold.relevant?'適合':'不適合'}</span></div><button type="button" class="open-material" data-material="${id}">本文・答え・採点根拠を見る ↗</button></article>`;
+    return `<article class="material ${excluded?'excluded':''}" data-card-id="${id}"><div class="card-top"><span>${stage===0?'教材':`${index+1}位`} · ${id}</span><span>${m.minutes}分 / ${m.format==='exercise'?'問題':'説明'}</span></div><h4>${esc(m.title)}</h4><div class="body">${esc(m.body)}</div>${stage===1?`<div class="muted">検索スコア ${row.shortlist.find(p=>p.id===id).score.toFixed(2)}（確率ではありません）</div>`:''}${stage>=3&&prob!==undefined?`<div class="probability"><span>適合</span><progress value="${prob}" max="1" aria-label="適合確率 ${prob.toFixed(2)}"></progress><strong>${prob.toFixed(2)}</strong></div><div class="muted">元の検索順位：${original+1}位</div>`:''}${stage===2?`<div class="reason">${excluded?gold.violations.map(v=>esc(reasons[v])).join(' / '):'条件通過'}</div>`:''}<div><span class="status ${gold.relevant?'':'bad'}">実験の採点：${gold.relevant?'正解に数える':'対象外'}</span></div><button type="button" class="open-material" data-material="${id}">本文・答え・採点根拠を見る ↗</button></article>`;
   }
   function renderStage() {
     const row=rows.get(selectedCase),q=cases.get(selectedCase),chosen=model.selected(row,threshold);
@@ -171,11 +206,11 @@
     const inPool=row.goldRelevantIds.filter(id=>row.shortlist.some(p=>p.id===id));
     const call=calls.get(selectedCase);
     const summaries=[
-      `この要求に対する仮ラベル上の適合教材：${row.goldRelevantIds.length} / 40件。カードのラベルは採点用で、Jevには渡していません。`,
+      `この要求に対する採点表で正解とした教材：${row.goldRelevantIds.length} / 40件。カードのラベルは採点用で、Jevには渡していません。`,
       `検索候補内の適合教材：${inPool.length}件 / 全${row.goldRelevantIds.length}件。${row.goldRelevantIds.length&&!inPool.length?'この段階で正解候補がすべて落ちています。':'この12件を後続の全手法で共有します。'}`,
       `${row.candidates.length}件通過、${12-row.candidates.length}件除外。${!row.candidates.length?'候補がないためAPIは呼びません。':'灰色の候補はJevへの入力に入りません。'}`,
       call?`候補${row.candidates.length}件を1回のAPI呼び出しで判定。実測${call.elapsedMs}ms / 推定$${call.costUsd.toFixed(8)}。高い順に並べ、同点は検索順位を維持。`:'条件通過候補が0件のため、API呼び出し・費用ともに0。判定値を補ってはいません。',
-      `下限${threshold.toFixed(2)}で${chosen.length}件提示。${threshold===.65?'実験で固定した下限と同じです。':'実験後の再集計です。新しい推論結果ではありません。'} 仮ラベルに一致する教材は${chosen.filter(id=>q.judgments[id].relevant).length}件。`
+      `下限${threshold.toFixed(2)}で${chosen.length}件提示。${threshold===.65?'実験で固定した下限と同じです。':'実験後の再集計です。新しい推論結果ではありません。'} 採点表の正解する教材は${chosen.filter(id=>q.judgments[id].relevant).length}件。`
     ];
     $('stage-summary').textContent=summaries[stage];
     const ids=model.stageIds(row,data.materials,stage,threshold),visible=stage===0&&!showAll?ids.slice(0,9):ids;
@@ -187,7 +222,7 @@
     const methods=[['検索だけ',r.output.retrieval],['条件フィルター',r.output.filtered],['Jevの並べ替え',r.output.jevRanked],[`下限${threshold.toFixed(2)}で提示`,model.selected(r,threshold)]];
     $('comparison').innerHTML=methods.map(([name,ids])=>{
       const m=materials.get(ids[0]),relevant=m&&q.judgments[m.id].relevant;
-      return `<div><div class="method-label">${esc(name)}</div><p>${m?esc(m.title):'表示なし'}</p><strong class="${relevant?'pass':'fail'}">${m?(relevant?'仮ラベルに一致':'仮ラベルと不一致'):(r.goldRelevantIds.length?'適合教材は存在する':'該当なしと一致')}</strong>${m?`<p><button type="button" class="open-material" data-material="${m.id}">${esc(m.id)}を確認</button></p>`:''}</div>`;
+      return `<div><div class="method-label">${esc(name)}</div><p>${m?esc(m.title):'表示なし'}</p><strong class="${relevant?'pass':'fail'}">${m?(relevant?'採点表の正解':'採点表では対象外'):(r.goldRelevantIds.length?'適合教材は存在する':'該当なしと一致')}</strong>${m?`<p><button type="button" class="open-material" data-material="${m.id}">${esc(m.id)}を確認</button></p>`:''}</div>`;
     }).join('');
   }
   function renderRaw() {
@@ -199,7 +234,7 @@
     const m=materials.get(id),q=cases.get(selectedCase),row=rows.get(selectedCase),j=q.judgments[id];
     const pool=row.shortlist.findIndex(v=>v.id===id),p=row.ranked.find(v=>v.id===id);
     $('dialog-title').textContent=`${m.id} · ${m.title}`;
-    $('dialog-body').innerHTML=`<div class="full-body">${esc(m.body)}</div>${m.answer?`<p><b>模範解答：</b>${esc(m.answer)}</p>`:''}<dl><dt>形式・想定時間</dt><dd>${esc(format(m.format))} / ${m.minutes}分（実験用の想定）</dd><dt>前提知識</dt><dd>${esc(m.prerequisites.map(s=>skills.get(s)||s).join('、')||'指定なし')}</dd><dt>この授業に対する仮の採点</dt><dd>目標タグ：${j.topicMatch?'一致':'不一致'}\n条件違反：${esc(j.violations.map(v=>reasons[v]).join('、')||'なし')}\n結論：${j.relevant?'適合':'不適合'}</dd><dt>実験での扱い</dt><dd>${pool<0?'検索上位12件の外':`検索${pool+1}位`}\n${p?`Jevの適合確率：${p.probability.toFixed(2)}`:'Jevの判定対象外'}</dd></dl><p class="muted">「適合」の仮ラベルは、目標タグ一致＋条件通過で自動付与したものです。先生がこの教材を採用した実績ではありません。</p>`;
+    $('dialog-body').innerHTML=`<div class="full-body">${esc(m.body)}</div>${m.answer?`<p><b>模範解答：</b>${esc(m.answer)}</p>`:''}<dl><dt>形式・想定時間</dt><dd>${esc(format(m.format))} / ${m.minutes}分（実験用の想定）</dd><dt>前提知識</dt><dd>${esc(m.prerequisites.map(s=>skills.get(s)||s).join('、')||'指定なし')}</dd><dt>この授業に対する実験前に決めた採点</dt><dd>目標タグ：${j.topicMatch?'一致':'不一致'}\n条件違反：${esc(j.violations.map(v=>reasons[v]).join('、')||'なし')}\n結論：${j.relevant?'正解に数える':'対象外'}</dd><dt>実験での扱い</dt><dd>${pool<0?'検索上位12件の外':`検索${pool+1}位`}\n${p?`Jevの適合確率：${p.probability.toFixed(2)}`:'Jevの判定対象外'}</dd></dl><p class="muted">「適合」の採点用の基準は、目標タグ一致＋条件通過で自動付与したものです。先生がこの教材を採用した実績ではありません。</p>`;
     $('material-dialog').showModal();
   }
   function renderResults() {
@@ -212,11 +247,30 @@
   function renderThreshold() {
     $('threshold').value=threshold;$('threshold-value').value=threshold.toFixed(2);$('threshold-value').textContent=threshold.toFixed(2);
     const s=model.selectionSummary(data.rows,threshold);
-    const values=[['先頭が適合',`${s.top1} / ${s.answerable}`,'適合教材がある要求'],['上位3件に適合あり',`${s.success} / ${s.answerable}`,'表示を減らすと取りこぼしも'],['表示教材の適合割合',s.shown?`${(100*s.relevantShown/s.shown).toFixed(1)}%`:'表示なし',`${s.relevantShown} / ${s.shown}教材`],['該当なしへの誤推薦',`${s.falseRecommendations} / ${s.noMatch}`,'教材がない要求']];
+    const values=[['最初の教材が正解',`${s.top1} / ${s.answerable}`,'適合教材がある要求'],['3件以内に正解',`${s.success} / ${s.answerable}`,'表示を減らすと取りこぼしも'],['表示した教材のうち正解',s.shown?`${(100*s.relevantShown/s.shown).toFixed(1)}%`:'表示なし',`${s.relevantShown} / ${s.shown}教材`],['該当なしへの誤推薦',`${s.falseRecommendations} / ${s.noMatch}`,'教材がない要求']];
     $('threshold-stats').innerHTML=values.map(([label,value,note])=>`<div class="metric"><span>${label}</span><strong>${value}</strong><small>${note}</small></div>`).join('');
   }
   $('threshold').addEventListener('input',e=>{threshold=Number(e.target.value);renderThreshold();renderComparison();renderStage();});
   $('reset-threshold').addEventListener('click',()=>{threshold=.65;renderThreshold();renderComparison();renderStage();});
+  const storySteps = [
+    ['先生は何を探した？', '<p>「分母をなくすため、全ての項に同じ数を掛ける操作」を練習させたい。条件は<strong>問題形式・2分以内</strong>です。</p><p>授業では既にその操作を説明した、という文脈も渡しました。Jevに教師の意図をゼロから推測させてはいません。</p>'],
+    ['AIを使う前に、どこまで絞れた？', '<p>40教材を文章の一致で検索して12件に絞り、形式・時間・既習事項をコードで確認しました。</p><p class="story-value">40件 → 12件 → 4件</p><p>この4件を、検索順位のまま見せる場合と、Jevで並べ替える場合で比較します。</p>'],
+    ['検索順位のままだと、最初はこれ', '<div class="story-pair"><article><h3>3x = 12 を解こう。</h3><p>実際に条件チェック後の先頭に残った教材です。方程式を解く教材で、形式と時間は合っています。</p></article><article><h3>先生の目的との違い</h3><p>練習するのは両辺を3で割る操作。今回練習させたい「分母をなくすため全ての項に掛ける操作」とは違います。</p></article></div>'],
+    ['Jevには、何を聞いた？', '<blockquote>授業の実績と課題の目標に対して、この教材をそのまま使うのは適切ですか？</blockquote><p>4教材それぞれについて独立に聞きました。4つの質問を1回のAPI呼び出しにまとめています。採点用の答え合わせ表は渡していません。</p>'],
+    ['Jevが先頭に上げたのは、これ', '<div class="story-pair"><article><h3>x/2 + 3 = 7 の両辺に2を掛けると？</h3><p>正解は x + 6 = 14。定数項の3にも2を掛けられるかを確認します。</p></article><article><h3>保存された判定値</h3><p class="story-value">0.84</p><p>この教材が4候補の中で最高。両辺で割り算する問題は0.08でした。0.84は実験の正答率ではありません。</p></article></div>'],
+    ['この1件では、何が改善した？', '<p>同じ4候補の中で、先頭が<strong>「両辺を割る問題」から「分母をなくす問題」</strong>に変わりました。こちらの採点表でも、後者を正解としていました。</p><p>これは改善した1例です。次の全体結果では、同じ改善が他の依頼でも起きたかを数えます。全ての依頼で改善したわけではありません。</p><p><a href="#results">全34件の結果へ ↓</a></p>']
+  ];
+  let storyIndex=0;
+  function renderStory(){
+    $('story-progress').textContent=`${storyIndex+1} / ${storySteps.length}`;
+    $('story-content').innerHTML=`<h3>${storySteps[storyIndex][0]}</h3>${storySteps[storyIndex][1]}`;
+    $('story-prev').disabled=storyIndex===0;
+    $('story-next').disabled=storyIndex===storySteps.length-1;
+    $('story-next').textContent=storyIndex===storySteps.length-1?'ここまでが1件の流れ':'次へ →';
+  }
+  $('story-prev').addEventListener('click',()=>{storyIndex=Math.max(0,storyIndex-1);renderStory();});
+  $('story-next').addEventListener('click',()=>{storyIndex=Math.min(storySteps.length-1,storyIndex+1);renderStory();});
+  renderStory();
   renderCase();renderResults();
 })();
 </script>
