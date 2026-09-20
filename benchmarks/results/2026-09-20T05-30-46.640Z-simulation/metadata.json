@@ -1,0 +1,55 @@
+{
+  "runId": "2026-09-20T05-30-46.640Z-simulation",
+  "startedAt": "2026-09-20T05:30:46.641Z",
+  "protocol": {
+    "version": 1,
+    "model": "jev-1.13.0",
+    "task": "Five fictional latent profiles plus an unknown output; NOT MaE 55-way classification",
+    "cases": 90,
+    "groups": 30,
+    "stages": [
+      "Jev diagnoses and independently selects one fixed-bank probe from initial answer",
+      "Look up pre-authored answer to selected probe",
+      "Jev re-diagnoses from initial and probe answer; prior prediction hidden"
+    ],
+    "probePolicy": "Jev choice from the same three probes; no ground truth access; every initially incorrect scenario receives exactly one probe",
+    "baseline": "Same selected probe: wrong => probe skill, correct => slip. No API call, no access to hidden profile. Cannot output mixed.",
+    "requestCache": "Exact request JSON shared across scenarios is called once and referenced by SHA256. Before prediction shared across all noise regimes. No independent-replicate claim.",
+    "abstention": {
+      "minimumConfidence": 0.5,
+      "minimumMaxProbability": 0.65,
+      "unknownIsAbstention": true
+    },
+    "metrics": [
+      "top1 before/after",
+      "paired improved/worsened",
+      "coverage/selectiveAccuracy",
+      "stratification by response regime and initial error mode",
+      "probe relevance",
+      "cost and latency"
+    ],
+    "errorPolicy": "Stop on first transport/API/schema failure, preserve logs; no retry or replacement predictions",
+    "tuning": "Dataset, response table, prompts and policy frozen before API calls. No result-driven tuning in this run.",
+    "limitations": [
+      "Author-defined error procedures and balanced priors are not observed student distributions",
+      "Noise regimes are stress tests, not calibrated probabilities",
+      "One response does not uniquely identify all hidden profiles",
+      "Simple baseline assumes error maps to tested skill",
+      "No teacher review or evidence about real students, curriculum coverage or learning outcomes",
+      "Not directly comparable to MaE 58.3%",
+      "Descriptive aggregate gives equal weight to regimes; no independent-sample significance claim"
+    ]
+  },
+  "gitRevision": "86d21a401e448d9610bd5e44f528d0a807db20e2",
+  "gitDirty": false,
+  "dataSha256": "6f1b9d2532d8fe25eaa4a171d83bee9b8cf756ce4178ac8b10ab2935efd8b144",
+  "protocolSha256": "56388a371a3a69681e9c8a15e5b0f6638ed5d501a1ae9d7675057962d1fd23f0",
+  "requestPlansSha256": "0f58cfa85ba2a56ba9371b0aece7469055455d771f7536cd8cb3b6469b89da5d",
+  "sourceFiles": {
+    "prepare.mjs": "dde6c7541680a736b7aed2d31592aea126456672a983c386fbf731fb2cd49a80",
+    "core.mjs": "7504c4adab4194ff7dc8acf6836cc65e0dfe1f1c39662290f9feec0f19835bd9",
+    "run.mjs": "b1fbba4c627b021fac03420cb22d9357e18e590d9e91b950419a438a50abdff1",
+    "../metrics.mjs": "3d75b4a20df6bbadd9b5e14ab428ea6ec238820ad81253d52984f06d3f6e815a",
+    "../../apps/learning-path/src/diagnosis.mjs": "d70d6bac6fe4bb62b9a270869c372c0b964baf3eb78992273373efb4fa7bf315"
+  }
+}
