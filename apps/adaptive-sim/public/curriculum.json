@@ -1,0 +1,612 @@
+{
+  "attribution": "学習指導要領LOD（元資料：文部科学省）",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "retrievedAt": "2026-09-20",
+  "source": "https://w3id.org/jp-cos/cs-items-20220830.ttl.gz",
+  "sourceSha256": "da2aaae6c76849a0492d7472dfcf6b7c975a743ffc800a113d45a66ae9f9922d",
+  "modifications": "36技能に関連する項目を抽出。技能名・前提関係・高校の学年配置は独自編集。全単元の網羅ではない。",
+  "nodes": [
+    {
+      "id": "add",
+      "grade": 1,
+      "name": "たし算",
+      "domain": "calculation",
+      "parents": [],
+      "lane": 0,
+      "releaseWeek": 0,
+      "source": {
+        "code": "8250213121100000",
+        "url": "https://jp-cos.github.io/825/0213121100000",
+        "text": "(ア) 加法及び減法の意味について理解し，それらが用いられる場合について知ること。"
+      }
+    },
+    {
+      "id": "sub",
+      "grade": 1,
+      "name": "ひき算",
+      "domain": "calculation",
+      "parents": [
+        "add"
+      ],
+      "lane": 1,
+      "releaseWeek": 0,
+      "source": {
+        "code": "8250213121100000",
+        "url": "https://jp-cos.github.io/825/0213121100000",
+        "text": "(ア) 加法及び減法の意味について理解し，それらが用いられる場合について知ること。"
+      }
+    },
+    {
+      "id": "shape",
+      "grade": 1,
+      "name": "形の特徴",
+      "domain": "geometry",
+      "parents": [],
+      "lane": 2,
+      "releaseWeek": 0,
+      "source": {
+        "code": "8250213200000000",
+        "url": "https://jp-cos.github.io/825/0213200000000",
+        "text": "Ｂ　図形"
+      }
+    },
+    {
+      "id": "add2",
+      "grade": 2,
+      "name": "2桁の計算",
+      "domain": "calculation",
+      "parents": [
+        "add",
+        "sub"
+      ],
+      "lane": 0,
+      "releaseWeek": 52,
+      "source": {
+        "code": "8250223120000000",
+        "url": "https://jp-cos.github.io/825/0223120000000",
+        "text": "(2) 加法及び減法に関わる数学的活動を通して，次の事項を身に付けることができるよう指導する。"
+      }
+    },
+    {
+      "id": "multiply",
+      "grade": 2,
+      "name": "かけ算",
+      "domain": "calculation",
+      "parents": [
+        "add"
+      ],
+      "lane": 1,
+      "releaseWeek": 52,
+      "source": {
+        "code": "8250223131400000",
+        "url": "https://jp-cos.github.io/825/0223131400000",
+        "text": "(エ) 乗法九九について知り，１位数と１位数との乗法の計算が確実にできること。"
+      }
+    },
+    {
+      "id": "length",
+      "grade": 2,
+      "name": "長さの単位",
+      "domain": "geometry",
+      "parents": [
+        "add2"
+      ],
+      "lane": 2,
+      "releaseWeek": 52,
+      "source": {
+        "code": "8250223311100000",
+        "url": "https://jp-cos.github.io/825/0223311100000",
+        "text": "(ア) 長さの単位（ミリメートル（mm），センチメートル（cm），メートル（m））及びかさの単位（ミリリットル（mL），デシリットル（dL），リットル（L））について知り，測定の意味を理解すること。"
+      }
+    },
+    {
+      "id": "divide",
+      "grade": 3,
+      "name": "わり算",
+      "domain": "calculation",
+      "parents": [
+        "multiply"
+      ],
+      "lane": 0,
+      "releaseWeek": 104,
+      "source": {
+        "code": "8250233141400000",
+        "url": "https://jp-cos.github.io/825/0233141400000",
+        "text": "(エ) 除数と商が共に１位数である除法の計算が確実にできること。"
+      }
+    },
+    {
+      "id": "decimal",
+      "grade": 3,
+      "name": "小数のたし算",
+      "domain": "calculation",
+      "parents": [
+        "add2"
+      ],
+      "lane": 1,
+      "releaseWeek": 104,
+      "source": {
+        "code": "8250233151200000",
+        "url": "https://jp-cos.github.io/825/0233151200000",
+        "text": "(イ) 1/10の位までの小数の加法及び減法の意味について理解し，それらの計算ができることを知ること。"
+      }
+    },
+    {
+      "id": "diameter",
+      "grade": 3,
+      "name": "円の半径と直径",
+      "domain": "geometry",
+      "parents": [
+        "multiply",
+        "shape"
+      ],
+      "lane": 2,
+      "releaseWeek": 104,
+      "source": {
+        "code": "8250233211300000",
+        "url": "https://jp-cos.github.io/825/0233211300000",
+        "text": "(ウ) 円について，中心，半径，直径を知ること。また，円に関連して，球についても直径などを知ること。"
+      }
+    },
+    {
+      "id": "fraction",
+      "grade": 4,
+      "name": "同分母の分数",
+      "domain": "calculation",
+      "parents": [
+        "add",
+        "divide"
+      ],
+      "lane": 0,
+      "releaseWeek": 156,
+      "source": {
+        "code": "8250243151200000",
+        "url": "https://jp-cos.github.io/825/0243151200000",
+        "text": "(イ) 同分母の分数の加法及び減法の計算ができること。"
+      }
+    },
+    {
+      "id": "rectangle",
+      "grade": 4,
+      "name": "長方形の面積",
+      "domain": "geometry",
+      "parents": [
+        "multiply",
+        "length"
+      ],
+      "lane": 1,
+      "releaseWeek": 156,
+      "source": {
+        "code": "8250243241200000",
+        "url": "https://jp-cos.github.io/825/0243241200000",
+        "text": "(イ) 正方形及び長方形の面積の計算による求め方について理解すること。"
+      }
+    },
+    {
+      "id": "angle",
+      "grade": 4,
+      "name": "角度",
+      "domain": "geometry",
+      "parents": [
+        "shape",
+        "add2"
+      ],
+      "lane": 2,
+      "releaseWeek": 156,
+      "source": {
+        "code": "8250243250000000",
+        "url": "https://jp-cos.github.io/825/0243250000000",
+        "text": "(5) 角の大きさに関わる数学的活動を通して，次の事項を身に付けることができるよう指導する。"
+      }
+    },
+    {
+      "id": "fraction2",
+      "grade": 5,
+      "name": "通分して足す",
+      "domain": "calculation",
+      "parents": [
+        "fraction",
+        "multiply"
+      ],
+      "lane": 0,
+      "releaseWeek": 208,
+      "source": {
+        "code": "8250253151100000",
+        "url": "https://jp-cos.github.io/825/0253151100000",
+        "text": "(ア) 異分母の分数の加法及び減法の計算ができること。"
+      }
+    },
+    {
+      "id": "percent",
+      "grade": 5,
+      "name": "割合・百分率",
+      "domain": "reasoning",
+      "parents": [
+        "divide",
+        "decimal"
+      ],
+      "lane": 1,
+      "releaseWeek": 208,
+      "source": {
+        "code": "8250253331200000",
+        "url": "https://jp-cos.github.io/825/0253331200000",
+        "text": "(イ) 百分率を用いた表し方を理解し，割合などを求めること。"
+      }
+    },
+    {
+      "id": "volume",
+      "grade": 5,
+      "name": "直方体の体積",
+      "domain": "geometry",
+      "parents": [
+        "rectangle",
+        "multiply"
+      ],
+      "lane": 2,
+      "releaseWeek": 208,
+      "source": {
+        "code": "8250253241200000",
+        "url": "https://jp-cos.github.io/825/0253241200000",
+        "text": "(イ) 立方体及び直方体の体積の計算による求め方について理解すること。"
+      }
+    },
+    {
+      "id": "fraction3",
+      "grade": 6,
+      "name": "分数のかけ算",
+      "domain": "calculation",
+      "parents": [
+        "fraction2",
+        "multiply"
+      ],
+      "lane": 0,
+      "releaseWeek": 260,
+      "source": {
+        "code": "8250263111200000",
+        "url": "https://jp-cos.github.io/825/0263111200000",
+        "text": "(イ) 分数の乗法及び除法の計算ができること。"
+      }
+    },
+    {
+      "id": "ratio",
+      "grade": 6,
+      "name": "比",
+      "domain": "reasoning",
+      "parents": [
+        "divide",
+        "multiply"
+      ],
+      "lane": 1,
+      "releaseWeek": 260,
+      "source": {
+        "code": "8250263321100000",
+        "url": "https://jp-cos.github.io/825/0263321100000",
+        "text": "(ア) 比の意味や表し方を理解し，数量の関係を比で表したり，等しい比をつくったりすること。"
+      }
+    },
+    {
+      "id": "circle",
+      "grade": 6,
+      "name": "円の面積",
+      "domain": "geometry",
+      "parents": [
+        "diameter",
+        "rectangle",
+        "decimal"
+      ],
+      "lane": 2,
+      "releaseWeek": 260,
+      "source": {
+        "code": "8250263231100000",
+        "url": "https://jp-cos.github.io/825/0263231100000",
+        "text": "(ア) 円の面積の計算による求め方について理解すること。"
+      }
+    },
+    {
+      "id": "signed",
+      "grade": 7,
+      "name": "正負の数",
+      "domain": "calculation",
+      "parents": [
+        "add2",
+        "sub"
+      ],
+      "lane": 0,
+      "releaseWeek": 312,
+      "source": {
+        "code": "8350213111200000",
+        "url": "https://jp-cos.github.io/835/0213111200000",
+        "text": "(イ) 正の数と負の数の四則計算をすること。"
+      }
+    },
+    {
+      "id": "equation",
+      "grade": 7,
+      "name": "一次方程式",
+      "domain": "reasoning",
+      "parents": [
+        "signed",
+        "fraction3",
+        "divide"
+      ],
+      "lane": 1,
+      "releaseWeek": 312,
+      "source": {
+        "code": "8350213131200000",
+        "url": "https://jp-cos.github.io/835/0213131200000",
+        "text": "(イ) 簡単な一元一次方程式を解くこと。"
+      }
+    },
+    {
+      "id": "proportion",
+      "grade": 7,
+      "name": "比例",
+      "domain": "reasoning",
+      "parents": [
+        "ratio",
+        "signed"
+      ],
+      "lane": 2,
+      "releaseWeek": 312,
+      "source": {
+        "code": "8350213311200000",
+        "url": "https://jp-cos.github.io/835/0213311200000",
+        "text": "(イ) 比例，反比例について理解すること。"
+      }
+    },
+    {
+      "id": "simultaneous",
+      "grade": 8,
+      "name": "連立方程式",
+      "domain": "reasoning",
+      "parents": [
+        "equation"
+      ],
+      "lane": 0,
+      "releaseWeek": 364,
+      "source": {
+        "code": "8350223121300000",
+        "url": "https://jp-cos.github.io/835/0223121300000",
+        "text": "(ウ) 簡単な連立二元一次方程式を解くこと。"
+      }
+    },
+    {
+      "id": "linear",
+      "grade": 8,
+      "name": "一次関数",
+      "domain": "reasoning",
+      "parents": [
+        "proportion",
+        "equation"
+      ],
+      "lane": 1,
+      "releaseWeek": 364,
+      "source": {
+        "code": "8350223311100000",
+        "url": "https://jp-cos.github.io/835/0223311100000",
+        "text": "(ア) 一次関数について理解すること。"
+      }
+    },
+    {
+      "id": "triangle",
+      "grade": 8,
+      "name": "三角形の角",
+      "domain": "geometry",
+      "parents": [
+        "angle",
+        "equation"
+      ],
+      "lane": 2,
+      "releaseWeek": 364,
+      "source": {
+        "code": "8350223200000000",
+        "url": "https://jp-cos.github.io/835/0223200000000",
+        "text": "Ｂ　図形"
+      }
+    },
+    {
+      "id": "quadratic",
+      "grade": 9,
+      "name": "二次方程式",
+      "domain": "calculation",
+      "parents": [
+        "equation",
+        "multiply"
+      ],
+      "lane": 0,
+      "releaseWeek": 416,
+      "source": {
+        "code": "8350233131200000",
+        "url": "https://jp-cos.github.io/835/0233131200000",
+        "text": "(イ) 因数分解したり平方の形に変形したりして二次方程式を解くこと。"
+      }
+    },
+    {
+      "id": "quadraticFn",
+      "grade": 9,
+      "name": "二次関数の値",
+      "domain": "reasoning",
+      "parents": [
+        "linear",
+        "multiply"
+      ],
+      "lane": 1,
+      "releaseWeek": 416,
+      "source": {
+        "code": "8350233311100000",
+        "url": "https://jp-cos.github.io/835/0233311100000",
+        "text": "(ア) 関数y＝ax^2について理解すること。"
+      }
+    },
+    {
+      "id": "pythagorean",
+      "grade": 9,
+      "name": "三平方の定理",
+      "domain": "geometry",
+      "parents": [
+        "triangle",
+        "quadratic"
+      ],
+      "lane": 2,
+      "releaseWeek": 416,
+      "source": {
+        "code": "8350233231100000",
+        "url": "https://jp-cos.github.io/835/0233231100000",
+        "text": "(ア) 三平方の定理の意味を理解し，それが証明できることを知ること。"
+      }
+    },
+    {
+      "id": "minimum",
+      "grade": 10,
+      "name": "二次関数の最小値",
+      "domain": "reasoning",
+      "parents": [
+        "quadraticFn",
+        "quadratic"
+      ],
+      "lane": 0,
+      "releaseWeek": 468,
+      "source": {
+        "code": "8451503300000000",
+        "url": "https://jp-cos.github.io/845/1503300000000",
+        "text": "(3) 二次関数\n二次関数について，数学的活動を通して，その有用性を認識するとともに，次の事項を身に付けることができるよう指導する。"
+      }
+    },
+    {
+      "id": "trig",
+      "grade": 10,
+      "name": "三角比",
+      "domain": "geometry",
+      "parents": [
+        "pythagorean",
+        "ratio"
+      ],
+      "lane": 1,
+      "releaseWeek": 468,
+      "source": {
+        "code": "8451503200000000",
+        "url": "https://jp-cos.github.io/845/1503200000000",
+        "text": "(2) 図形と計量\n図形と計量について，数学的活動を通して，その有用性を認識するとともに，次の事項を身に付けることができるよう指導する。"
+      }
+    },
+    {
+      "id": "probability",
+      "grade": 10,
+      "name": "場合の数・確率",
+      "domain": "reasoning",
+      "parents": [
+        "ratio",
+        "fraction3"
+      ],
+      "lane": 2,
+      "releaseWeek": 468,
+      "source": {
+        "code": "8454503213000000",
+        "url": "https://jp-cos.github.io/845/4503213000000",
+        "text": "(ウ) 確率の意味や基本的な法則についての理解を深め，それらを用いて事象の確率や期待値を求めること。"
+      }
+    },
+    {
+      "id": "sequence",
+      "grade": 11,
+      "name": "等差数列",
+      "domain": "reasoning",
+      "parents": [
+        "linear"
+      ],
+      "lane": 0,
+      "releaseWeek": 520,
+      "source": {
+        "code": "8455503111000000",
+        "url": "https://jp-cos.github.io/845/5503111000000",
+        "text": "(ア) 等差数列と等比数列について理解し，それらの一般項や和を求めること。"
+      }
+    },
+    {
+      "id": "log",
+      "grade": 11,
+      "name": "対数",
+      "domain": "calculation",
+      "parents": [
+        "multiply",
+        "quadratic"
+      ],
+      "lane": 1,
+      "releaseWeek": 520,
+      "source": {
+        "code": "8452503300000000",
+        "url": "https://jp-cos.github.io/845/2503300000000",
+        "text": "(3) 指数関数・対数関数\n指数関数及び対数関数について，数学的活動を通して，その有用性を認識するとともに，次の事項を身に付けることができるよう指導する。"
+      }
+    },
+    {
+      "id": "derivative",
+      "grade": 11,
+      "name": "微分係数",
+      "domain": "calculation",
+      "parents": [
+        "quadraticFn",
+        "minimum"
+      ],
+      "lane": 2,
+      "releaseWeek": 520,
+      "source": {
+        "code": "8452503511000000",
+        "url": "https://jp-cos.github.io/845/2503511000000",
+        "text": "(ア) 微分係数や導関数の意味について理解し，関数の定数倍，和及び差の導関数を求めること。"
+      }
+    },
+    {
+      "id": "integral",
+      "grade": 12,
+      "name": "定積分",
+      "domain": "calculation",
+      "parents": [
+        "derivative",
+        "fraction3"
+      ],
+      "lane": 0,
+      "releaseWeek": 572,
+      "source": {
+        "code": "8453503311000000",
+        "url": "https://jp-cos.github.io/845/3503311000000",
+        "text": "(ア) 不定積分及び定積分の基本的な性質についての理解を深め，それらを用いて不定積分や定積分を求めること。"
+      }
+    },
+    {
+      "id": "vector",
+      "grade": 12,
+      "name": "ベクトルの内積",
+      "domain": "geometry",
+      "parents": [
+        "trig",
+        "signed"
+      ],
+      "lane": 1,
+      "releaseWeek": 572,
+      "source": {
+        "code": "8456503112000000",
+        "url": "https://jp-cos.github.io/845/6503112000000",
+        "text": "(イ) ベクトルの内積及びその基本的な性質について理解すること。"
+      }
+    },
+    {
+      "id": "limit",
+      "grade": 12,
+      "name": "数列の極限",
+      "domain": "reasoning",
+      "parents": [
+        "sequence",
+        "fraction3"
+      ],
+      "lane": 2,
+      "releaseWeek": 572,
+      "source": {
+        "code": "8453503111000000",
+        "url": "https://jp-cos.github.io/845/3503111000000",
+        "text": "(ア) 数列の極限について理解し，数列｛rn｝の極限などを基に簡単な数列の極限を求めること。"
+      }
+    }
+  ]
+}

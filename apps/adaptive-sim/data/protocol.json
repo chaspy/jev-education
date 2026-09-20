@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "seed": 20260920,
+  "weeks": 624,
+  "students": 4,
+  "skills": 36,
+  "practicePerWeek": 4,
+  "extraProbeMax": 1,
+  "sourcePolicy": "Curriculum excerpts: Course of Study LOD / MEXT, CC BY 4.0. Questions, dependency edges and simulator: original demo data.",
+  "purpose": "Illustrate how learning routes change under explicit simulated learning and forgetting assumptions. Not evidence of real educational effectiveness.",
+  "policies": ["linear", "rule", "jev"],
+  "jev": "jev-1.13.0",
+  "jevInput": "Only released candidate skills and observed answer history; no hidden mastery, pupil profile or ground truth diagnosis.",
+  "candidatePolicy": "Code constructs up to four candidates. Jev chooses only among them. Single-candidate weeks require no inference.",
+  "comparison": "Identical simulator coefficients, starting states, exercise budget and seeded random streams. Different choices change future states. One seed, four authored profiles; no statistical superiority claim.",
+  "observation": "Past pass count differs from estimated current retention and internal simulated mastery. Both are exposed separately in the UI.",
+  "fees": "Input token usage times $0.042 per million is an estimate, not an invoice. Browser playback makes no inference calls."
+}
