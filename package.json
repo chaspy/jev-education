@@ -15,7 +15,9 @@
     "benchmark:mae": "node --env-file=.env benchmarks/run.mjs mae",
     "benchmark:demo": "node --env-file=.env benchmarks/run.mjs demo",
     "benchmark:simulation:prepare": "node benchmarks/simulation/prepare.mjs",
-    "benchmark:simulation": "node --env-file=.env benchmarks/simulation/run.mjs"
+    "benchmark:simulation": "node --env-file=.env benchmarks/simulation/run.mjs",
+    "benchmark:luna:simulation": "node --env-file=.env benchmarks/openai/run.mjs simulation",
+    "benchmark:luna:mae": "node --env-file=.env benchmarks/openai/run.mjs mae"
   },
   "devDependencies": {
     "wrangler": "4.135.0"
