@@ -1,0 +1,44 @@
+{
+  "endpoint": "http://127.0.0.1:8009/v1/systemone",
+  "model": "jaredpalmer/kev-0.5b",
+  "officialSdk": "typesafe-sdk",
+  "elapsedMs": 2816.419374999896,
+  "response": {
+    "model": "kev-0.5b",
+    "usage": {
+      "input_tokens": 81,
+      "output_tokens": 155
+    },
+    "answers": {
+      "topic": {
+        "type": "choice",
+        "choice": "billing",
+        "confidence": 1.0,
+        "probabilities": {
+          "billing": 1.0,
+          "technical": 0.0,
+          "sales": 0.0
+        }
+      },
+      "refund": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "urgency": {
+        "type": "score",
+        "score": 0.54,
+        "confidence": 0.73,
+        "legend": {
+          "0": "no deadline mentioned",
+          "1": "due this week",
+          "2": "due today"
+        },
+        "probabilities": {
+          "0": 0.58,
+          "1": 0.29,
+          "2": 0.12
+        }
+      }
+    }
+  }
+}

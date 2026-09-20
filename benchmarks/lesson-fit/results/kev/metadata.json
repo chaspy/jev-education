@@ -1,0 +1,11 @@
+{
+  "engine": "kev",
+  "model": "kev-0.5b",
+  "endpoint": "http://127.0.0.1:8009/v1/systemone",
+  "startedAt": "2026-09-20T06:59:44.291Z",
+  "dataSha256": "1fbe498eb79d379385e710f820ca213c13279b3e7c2333242a61139028c5b899",
+  "requestsSha256": "62a1cb13f9de08cf346c02a08316fd6ad82a5aa19dad066505e303419969c621",
+  "gitRevision": "6aa21be08fde506159626a2f95c981036120eae0",
+  "warmup": "Kev was warmed by the separate SDK smoke test. Jev network/API time includes provider overhead.",
+  "costBasis": "external API fee 0; hardware, power and operations unmeasured"
+}

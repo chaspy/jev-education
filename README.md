@@ -108,3 +108,11 @@ MaE公開データ151件の55分類ではTop-1 58.3%、Top-3 79.5%。
 ## 調査記録
 
 - [Jevクローン6件：ローカル実行・ライセンス・スキーマ互換性](research/jev-clones/README.md)
+
+## やり直した実験とKev
+
+- [目的に合う問題を選べるか：12場面の直接選択実験](benchmarks/lesson-fit/README.md)
+- [新しい体験ページ](https://jev-education-benchmark-explorer.take-she12.workers.dev)（旧実験は履歴に移動）
+- [Kevの起動と社内セルフホスト](scripts/kev/README.md)
+- `npm run lesson-fit:dev`: 新しい教材ページをlocalhost:4324で開く。
+- `npm run kev:start`: ローカル推論APIを127.0.0.1:8009で起動する。

@@ -7,3 +7,7 @@ node_modules/
 dist/
 logs/
 .DS_Store
+
+.local/
+__pycache__/
+apps/lesson-fit/public/previous/

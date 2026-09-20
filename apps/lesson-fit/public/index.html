@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'">
+<title>Jevは授業に合う問題を選べる？</title><link rel="stylesheet" href="style.css"><script defer src="data.js"></script><script defer src="app.js"></script></head>
+<body><header><b>教材を選ぶ、小さな実験</b><nav><a href="#try">やってみる</a><a href="#results">結果</a><a href="standalone.html" download="教材選択の実験.html">HTML保存</a></nav></header>
+<main>
+<section class="opening"><p class="label">問いを1つに絞って、やり直しました</p><h1>Jevは、先生の目的に合う問題を選べる？</h1><p>先生は「これを練習させたい」と伝える。Jevは用意された3つの問題を読み、1つを選ぶ。合うものがなければ「該当なし」と答える。今回試すのは、この判断です。</p><p class="note">問題の生成や生徒の診断はしません。実験用に作った問題で、まず具体的に体験してください。</p></section>
+<section id="try"><div class="section-heading"><h2>1. あなたなら、どの問題を出す？</h2><span class="badge">12場面すべて公開</span></div>
+<label class="select-label" for="scenario">試す場面</label><select id="scenario"></select>
+<article class="teacher"><p class="label">先生が教えたこと</p><p id="lesson"></p><p class="label">先生の依頼</p><p id="goal" class="goal"></p></article>
+<p>下から選ぶと、実験前に決めた答えと理由が出ます。</p><div id="options" class="options"></div>
+<div id="feedback" aria-live="polite" hidden></div>
+<button id="reveal" class="primary">JevとKevの実際の回答を見る</button>
+<div id="answer" hidden><h3>同じ依頼・同じ候補に、どう答えたか</h3><div id="model-answers" class="model-answers"></div><p class="note">保存した実行結果を表示しています。押すたびにAPIを呼ぶデモではありません。表示の「確率」はモデルの出力で、正答率ではありません。</p>
+<details><summary>依頼の言い換え・候補の順番で変わる？</summary><p>同じ場面で、依頼を2通りに言い換え、選択肢を2通りの順で出しました。合計4回です。</p><label for="variant">表示する実行</label><select id="variant"><option value="0-0">元の依頼・順番1</option><option value="0-1">元の依頼・順番2</option><option value="1-0">言い換えた依頼・順番1</option><option value="1-1">言い換えた依頼・順番2</option></select><div id="variants"></div></details>
+<details><summary>文字の重なりだけで選ぶと？</summary><div id="baseline"></div><p class="note">これは単純な比較用の方法です。高性能な検索サービスとの比較ではありません。文字が少しでも重なると候補を返すので、「該当なし」の判断にも弱い方法です。</p></details>
+<details><summary>APIに送った全文と、返ってきた全文</summary><label for="raw-engine">モデル</label><select id="raw-engine"><option value="jev">Jev</option><option value="kev">Kev-0.5B</option></select><p>正解と採点理由は送っていません。</p><h4>Request</h4><pre id="request"></pre><h4>Response</h4><pre id="response"></pre></details>
+</div></section>
+<section id="method"><h2>2. 何を、どう確かめた？</h2><div class="steps"><article><b>仮説</b><p>授業の目的と候補を明示すれば、Jevは「同じ話題か」だけでなく「練習する操作が合うか」を判断できるのでは？</p></article><article><b>方法</b><p>自作の12場面を用意。10場面は正解が1つ、2場面は該当なし。全候補を直接渡し、JevとローカルKevに1つ選ばせました。</p></article><article><b>答え合わせ</b><p>実験前に、問題文が要求する数学操作を読んで正解と理由を決めました。上の体験で理由をすべて確認できます。先生による独立評価ではありません。</p></article></div>
+<p><strong>検索も、候補を絞る条件フィルターも挟んでいません。</strong>目的と候補が揃った状態での「選ぶ判断」を直接試しました。</p><p>各場面を、依頼2表現×選択肢の順番2通りで試しました。12場面×4回＝48回です。48個の独立した授業を試したわけではありません。</p></section>
+<section id="results"><h2>3. 結果はどうだった？</h2><p>まず見たいのは、言い換えや順番の変更があっても、4回とも正しく選べた場面の数です。</p><div id="summary" class="model-answers"></div><div class="table-scroll"><table><thead><tr><th>場面</th><th>Jev</th><th>Kev-0.5B</th><th>文字一致</th></tr></thead><tbody id="result-rows"></tbody></table></div><p class="note">表の数字は各場面4回中の正解数。「文字一致」は参考比較。ランダムに4択から選ぶ場合の期待正答率は25%です。</p><div id="costs"></div></section>
+<section id="analysis"><h2>4. 結果から何が分かる？</h2><article class="finding"><h3>Jevは、この明確な問題設定では選べた</h3><p>「分母をなくす」と「係数で割る」、「展開」と「同類項をまとめる」などを区別できました。該当する問題がない場面も含め、全48回が採点表と一致しました。</p><p>一方、<strong>問題が簡単で、目的もはっきりした自作12場面</strong>です。100%は、この小さな実験での数字です。</p></article><article class="finding"><h3>ローカルKevは動いたが、同じ精度ではなかった</h3><p>Kev-0.5Bは、分母をなくす問題があるのに「該当なし」と答えたり、因数分解の依頼に展開の問題を選んだりしました。APIの形式が同じでも、同じ判断ができるとは限りません。</p></article><article class="finding"><h3>まだ「先生の仕事が楽になる」とは実証していない</h3><p>2万件から候補を探す処理も、実際の教材も、先生の作業時間も測っていません。単純な文字一致より良かったことから、既存の検索サービス全般より優秀だとも言えません。</p></article></section>
+<section id="next"><h2>5. 仕事で役立つかを確かめる、次の実験</h2><ol><li><b>実際の依頼と教材を集める。</b>先生が探したときの目的、授業範囲、検索候補を揃える。</li><li><b>先に先生が候補を評価する。</b>使える教材が複数ある場合や、判断が割れる場合も記録する。</li><li><b>検索だけ／検索＋Jevを比べる。</b>同じ候補から、先生が使える教材へ早く到達できたかを測る。採用率・時間・誤推薦・費用を比較する。</li></ol><p>今回の収穫は「この判断をJevに任せる構成は動く」と確認できたこと。現場の価値の検証は、この次です。</p></section>
+<footer><p>2026-09-20 実行。自作教材・依頼：CC BY 4.0。<a href="https://github.com/chaspy/jev-education/tree/main/benchmarks/lesson-fit">データ・実行コード・全ログ</a></p><p><a href="previous/index.html">以前の実験を履歴として見る</a>（旧19/24→21/24の実験。今回とは別のデータ・方法です）</p></footer>
+</main></body></html>

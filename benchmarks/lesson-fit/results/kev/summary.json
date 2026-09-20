@@ -1,0 +1,57 @@
+{
+  "engine": "kev",
+  "model": "kev-0.5b",
+  "endpoint": "http://127.0.0.1:8009/v1/systemone",
+  "startedAt": "2026-09-20T06:59:44.291Z",
+  "dataSha256": "1fbe498eb79d379385e710f820ca213c13279b3e7c2333242a61139028c5b899",
+  "requestsSha256": "62a1cb13f9de08cf346c02a08316fd6ad82a5aa19dad066505e303419969c621",
+  "gitRevision": "6aa21be08fde506159626a2f95c981036120eae0",
+  "warmup": "Kev was warmed by the separate SDK smoke test. Jev network/API time includes provider overhead.",
+  "costBasis": "external API fee 0; hardware, power and operations unmeasured",
+  "status": "complete",
+  "completedAt": "2026-09-20T06:59:51.093Z",
+  "metrics": {
+    "trials": 48,
+    "correct": 31,
+    "scenarioCount": 12,
+    "allVariantsCorrect": 6,
+    "answerable": {
+      "trials": 40,
+      "correct": 27
+    },
+    "noMatch": {
+      "trials": 8,
+      "correct": 4
+    },
+    "orderStablePairs": 19,
+    "orderPairs": 24,
+    "latencyMs": {
+      "median": 84.07970849999992,
+      "min": 67.47587500000009,
+      "max": 1127.5402920000001
+    },
+    "apiCostUsd": 0
+  },
+  "baseline": {
+    "trials": 48,
+    "correct": 26,
+    "scenarioCount": 12,
+    "allVariantsCorrect": 5,
+    "answerable": {
+      "trials": 40,
+      "correct": 26
+    },
+    "noMatch": {
+      "trials": 8,
+      "correct": 0
+    },
+    "orderStablePairs": 19,
+    "orderPairs": 24,
+    "latencyMs": {
+      "median": 0,
+      "min": 0,
+      "max": 0
+    },
+    "apiCostUsd": 0
+  }
+}

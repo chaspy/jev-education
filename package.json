@@ -9,7 +9,7 @@
     "dev": "node --env-file=.env scripts/dev.mjs",
     "start": "npm run dev",
     "test": "node --test apps/learning-path/test/*.test.mjs apps/benchmark-explorer/test/*.test.mjs benchmarks/test/*.test.mjs",
-    "build": "wrangler deploy --dry-run --outdir dist --config apps/learning-path/wrangler.jsonc && npm run explorer:check",
+    "build": "wrangler deploy --dry-run --outdir dist --config apps/learning-path/wrangler.jsonc && npm run explorer:check && npm run lesson-fit:check",
     "deploy": "wrangler deploy --config apps/learning-path/wrangler.jsonc",
     "benchmark:prepare": "node benchmarks/prepare.mjs",
     "benchmark:mae": "node --env-file=.env benchmarks/run.mjs mae",
@@ -21,9 +21,14 @@
     "benchmark:material-search:prepare": "node benchmarks/material-search/prepare.mjs",
     "benchmark:material-search": "node --env-file=.env benchmarks/material-search/run.mjs",
     "explorer:build": "node scripts/build-benchmark-explorer.mjs",
-    "explorer:dev": "npm run explorer:build && wrangler dev --config apps/benchmark-explorer/wrangler.jsonc --port 4323",
-    "explorer:deploy": "npm run explorer:build && wrangler deploy --config apps/benchmark-explorer/wrangler.jsonc",
-    "explorer:check": "wrangler deploy --dry-run --outdir dist/explorer --config apps/benchmark-explorer/wrangler.jsonc"
+    "explorer:dev": "npm run lesson-fit:dev",
+    "explorer:deploy": "npm run lesson-fit:deploy",
+    "explorer:check": "wrangler deploy --dry-run --outdir dist/explorer --config apps/benchmark-explorer/wrangler.jsonc",
+    "lesson-fit:build": "node scripts/build-lesson-fit.mjs",
+    "lesson-fit:check": "npm run lesson-fit:build && wrangler deploy --dry-run --outdir dist/lesson-fit --config apps/lesson-fit/wrangler.jsonc",
+    "lesson-fit:dev": "npm run lesson-fit:build && wrangler dev --config apps/lesson-fit/wrangler.jsonc --port 4324",
+    "lesson-fit:deploy": "npm run lesson-fit:build && wrangler deploy --config apps/lesson-fit/wrangler.jsonc",
+    "kev:start": "bash scripts/kev/start.sh"
   },
   "devDependencies": {
     "wrangler": "4.135.0"
