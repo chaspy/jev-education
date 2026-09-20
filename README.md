@@ -4,6 +4,8 @@
 
 ## もどり道 — 学び直しの地図
 
+公開デモ：https://jev-education-learning-path.take-she12.workers.dev
+
 `apps/learning-path/` に配置しています。中1数学の問題と途中式を入力すると、Jev が最初の
 誤りの候補を選び、確認問題・復習教材・元の問題への再挑戦へ進みます。
 
