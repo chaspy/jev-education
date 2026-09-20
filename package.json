@@ -1,0 +1,14 @@
+{
+  "name": "jev-education",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node --env-file=.env scripts/dev.mjs",
+    "start": "npm run dev",
+    "test": "node --test apps/learning-path/test/*.test.mjs",
+    "build": "wrangler deploy --dry-run --outdir dist --config apps/learning-path/wrangler.jsonc",
+    "deploy": "wrangler deploy --config apps/learning-path/wrangler.jsonc"
+  },
+  "devDependencies": { "wrangler": "4.135.0" }
+}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="誤答から、次の一歩を。中1数学の途中式をもとに復習する内容と教材を探すオープン教育デモ。"><title>もどり道 — 学び直しの地図</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body><header><a class="brand" href="/">↳ もどり道 <span>学び直しの地図</span></a><nav><span class="pill">中1 数学 / 公開デモ</span><a href="/about.html">データとしくみ ↗</a></nav></header>
+<main>
+  <div class="topline"><h1>どこに戻れば、解けるようになる？</h1><p>途中式 → 確認問題 → 復習 → もう一度</p></div>
+  <div class="layout">
+    <section class="panel input-panel"><div class="section-label">01 <h2>解き方を見せてください</h2></div>
+      <label for="problem">試す問題</label><select id="problem"></select>
+      <div class="problem-card"><span>次の方程式を解きなさい。</span><div id="expression"></div><span class="small">オリジナル教材 · CC BY 4.0</span></div>
+      <form id="form"><label for="work">途中式・考え方</label><textarea id="work" maxlength="2000" required placeholder="3x + 2 = 15&#10;3x = 13&#10;x = 13/3"></textarea><div class="sample-heading">入力サンプル</div><div id="examples" class="chips"></div><button id="diagnose" class="primary" type="submit">戻り先を探す <span>→</span></button></form>
+      <p class="notice">入力は TypeSafe API に送信されます。氏名や実際の生徒の答案は入力せず、サンプルでお試しください。成績評価には使いません。</p>
+      <div id="status" role="status" aria-live="polite"></div>
+      <section id="insight" hidden></section>
+    </section>
+    <section class="panel map-panel"><div class="section-label">02 <h2>学習内容のつながり</h2></div><div class="map-legend"><span>○ 学習項目</span><span class="accent">● 戻り先候補</span><span>矢印：前提 → 次の内容</span></div><div class="map-scroll"><svg id="map" viewBox="0 0 620 410" role="img" aria-label="中1数学の前提関係マップ"></svg></div><p class="small">項目を押すと教材を確認できます。前提関係はデモ独自の編集で、公式の学習順序ではありません。</p><div id="flow" class="empty-state"><span class="path-icon">↶</span><h3>間違い方で、戻り先は変わる。</h3><p>左のサンプルを選んで実行すると、<br>つまずきの候補と確認問題が表示されます。</p></div></section>
+  </div>
+  <section id="learning" class="panel learning-panel" hidden></section>
+  <section id="retry" class="panel" hidden></section>
+  <section id="debug" class="panel debug-panel" hidden><div id="metrics"></div><details><summary>実行の記録 · Raw request / response</summary><div class="raw-grid"><div><h3>Request</h3><pre id="raw-request"></pre></div><div><h3>Response</h3><pre id="raw-response"></pre></div></div><button id="download-log" class="secondary">この実行を JSON で保存</button></details></section>
+  <footer><span>オープンデータと自作教材でつくる学習実験。業務データは使用していません。</span><a href="/about.html">出典・ライセンス・プライバシー</a><a href="https://github.com/chaspy/jev-education">GitHub ↗</a></footer>
+</main></body></html>
