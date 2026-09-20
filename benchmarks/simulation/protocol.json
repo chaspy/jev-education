@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "model": "jev-1.13.0",
+  "task": "Five fictional latent profiles plus an unknown output; NOT MaE 55-way classification",
+  "cases": 90,
+  "groups": 30,
+  "stages": ["Jev diagnoses and independently selects one fixed-bank probe from initial answer", "Look up pre-authored answer to selected probe", "Jev re-diagnoses from initial and probe answer; prior prediction hidden"],
+  "probePolicy": "Jev choice from the same three probes; no ground truth access; every initially incorrect scenario receives exactly one probe",
+  "baseline": "Same selected probe: wrong => probe skill, correct => slip. No API call, no access to hidden profile. Cannot output mixed.",
+  "requestCache": "Exact request JSON shared across scenarios is called once and referenced by SHA256. Before prediction shared across all noise regimes. No independent-replicate claim.",
+  "abstention": {"minimumConfidence": 0.5, "minimumMaxProbability": 0.65, "unknownIsAbstention": true},
+  "metrics": ["top1 before/after", "paired improved/worsened", "coverage/selectiveAccuracy", "stratification by response regime and initial error mode", "probe relevance", "cost and latency"],
+  "errorPolicy": "Stop on first transport/API/schema failure, preserve logs; no retry or replacement predictions",
+  "tuning": "Dataset, response table, prompts and policy frozen before API calls. No result-driven tuning in this run.",
+  "limitations": ["Author-defined error procedures and balanced priors are not observed student distributions", "Noise regimes are stress tests, not calibrated probabilities", "One response does not uniquely identify all hidden profiles", "Simple baseline assumes error maps to tested skill", "No teacher review or evidence about real students, curriculum coverage or learning outcomes", "Not directly comparable to MaE 58.3%", "Descriptive aggregate gives equal weight to regimes; no independent-sample significance claim"]
+}

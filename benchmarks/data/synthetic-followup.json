@@ -1,0 +1,3088 @@
+{
+  "version": 1,
+  "license": "CC BY 4.0",
+  "author": "chaspy/jev-education, AI-assisted; not educator-reviewed",
+  "provenance": "All fictional. No MaE rows or real student records. All answers fixed before inference.",
+  "labels": {
+    "distribution": "分配法則で、かっこ内の定数項に係数を掛け忘れるつまずき。",
+    "signed": "移項・減算で符号を取り違え、引くべき定数を足してしまうつまずき。",
+    "balance": "等式の片辺だけから数を引き、もう片辺に同じ操作をしないつまずき。",
+    "mixed": "分配法則の掛け忘れと、移項・減算の符号の取り違えの両方につまずきがある。",
+    "slip": "上記の持続的なつまずきはなく、今回の誤答は一時的なミス。"
+  },
+  "probes": [
+    {
+      "id": "p1",
+      "skill": "distribution",
+      "question": "4(y + 3) を展開してください。",
+      "correctAnswer": "4y + 12",
+      "wrongAnswer": "4y + 3"
+    },
+    {
+      "id": "p2",
+      "skill": "signed",
+      "question": "z + 5 = 12 の両辺から5を引くと、zはいくつですか。",
+      "correctAnswer": "7",
+      "wrongAnswer": "17"
+    },
+    {
+      "id": "p3",
+      "skill": "balance",
+      "question": "z + 4 = 11 で左辺から4を引きます。等式を保つため右辺はどんな式にしますか。",
+      "correctAnswer": "11 - 4",
+      "wrongAnswer": "11のまま"
+    }
+  ],
+  "cases": [
+    {
+      "id": "q1-distribution-systematic-clean",
+      "group": "q1-distribution-systematic",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "4.333333"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-distribution-systematic-lucky",
+      "group": "q1-distribution-systematic",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "4.333333"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-distribution-systematic-careless",
+      "group": "q1-distribution-systematic",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "4.333333"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-distribution-incidental-clean",
+      "group": "q1-distribution-incidental",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-distribution-incidental-lucky",
+      "group": "q1-distribution-incidental",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-distribution-incidental-careless",
+      "group": "q1-distribution-incidental",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-signed-systematic-clean",
+      "group": "q1-signed-systematic",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "7"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-signed-systematic-lucky",
+      "group": "q1-signed-systematic",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "7"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-signed-systematic-careless",
+      "group": "q1-signed-systematic",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "7"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-signed-incidental-clean",
+      "group": "q1-signed-incidental",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-signed-incidental-lucky",
+      "group": "q1-signed-incidental",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-signed-incidental-careless",
+      "group": "q1-signed-incidental",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-balance-systematic-clean",
+      "group": "q1-balance-systematic",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q1-balance-systematic-lucky",
+      "group": "q1-balance-systematic",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-balance-systematic-careless",
+      "group": "q1-balance-systematic",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q1-balance-incidental-clean",
+      "group": "q1-balance-incidental",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q1-balance-incidental-lucky",
+      "group": "q1-balance-incidental",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-balance-incidental-careless",
+      "group": "q1-balance-incidental",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q1-mixed-systematic-clean",
+      "group": "q1-mixed-systematic",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5.666667"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-mixed-systematic-lucky",
+      "group": "q1-mixed-systematic",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5.666667"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-mixed-systematic-careless",
+      "group": "q1-mixed-systematic",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5.666667"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q1-mixed-incidental-clean",
+      "group": "q1-mixed-incidental",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-mixed-incidental-lucky",
+      "group": "q1-mixed-incidental",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-mixed-incidental-careless",
+      "group": "q1-mixed-incidental",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q1-slip-systematic-clean",
+      "group": "q1-slip-systematic",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "4"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-slip-systematic-lucky",
+      "group": "q1-slip-systematic",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "4"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-slip-systematic-careless",
+      "group": "q1-slip-systematic",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "4"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-slip-incidental-clean",
+      "group": "q1-slip-incidental",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-slip-incidental-lucky",
+      "group": "q1-slip-incidental",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q1-slip-incidental-careless",
+      "group": "q1-slip-incidental",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "3(x + 2) = 15 を解いてください。",
+        "correctAnswer": "3",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-distribution-systematic-clean",
+      "group": "q2-distribution-systematic",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-distribution-systematic-lucky",
+      "group": "q2-distribution-systematic",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-distribution-systematic-careless",
+      "group": "q2-distribution-systematic",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-distribution-incidental-clean",
+      "group": "q2-distribution-incidental",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-distribution-incidental-lucky",
+      "group": "q2-distribution-incidental",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-distribution-incidental-careless",
+      "group": "q2-distribution-incidental",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-signed-systematic-clean",
+      "group": "q2-signed-systematic",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "10"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-signed-systematic-lucky",
+      "group": "q2-signed-systematic",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "10"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-signed-systematic-careless",
+      "group": "q2-signed-systematic",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "10"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-signed-incidental-clean",
+      "group": "q2-signed-incidental",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-signed-incidental-lucky",
+      "group": "q2-signed-incidental",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-signed-incidental-careless",
+      "group": "q2-signed-incidental",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-balance-systematic-clean",
+      "group": "q2-balance-systematic",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "7"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-balance-systematic-lucky",
+      "group": "q2-balance-systematic",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "7"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-balance-systematic-careless",
+      "group": "q2-balance-systematic",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "7"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-balance-incidental-clean",
+      "group": "q2-balance-incidental",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-balance-incidental-lucky",
+      "group": "q2-balance-incidental",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-balance-incidental-careless",
+      "group": "q2-balance-incidental",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-mixed-systematic-clean",
+      "group": "q2-mixed-systematic",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "8.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-mixed-systematic-lucky",
+      "group": "q2-mixed-systematic",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "8.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-mixed-systematic-careless",
+      "group": "q2-mixed-systematic",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "8.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-mixed-incidental-clean",
+      "group": "q2-mixed-incidental",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-mixed-incidental-lucky",
+      "group": "q2-mixed-incidental",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-mixed-incidental-careless",
+      "group": "q2-mixed-incidental",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q2-slip-systematic-clean",
+      "group": "q2-slip-systematic",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-slip-systematic-lucky",
+      "group": "q2-slip-systematic",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-slip-systematic-careless",
+      "group": "q2-slip-systematic",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-slip-incidental-clean",
+      "group": "q2-slip-incidental",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-slip-incidental-lucky",
+      "group": "q2-slip-incidental",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q2-slip-incidental-careless",
+      "group": "q2-slip-incidental",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "2(x + 3) = 14 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-distribution-systematic-clean",
+      "group": "q3-distribution-systematic",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-distribution-systematic-lucky",
+      "group": "q3-distribution-systematic",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-distribution-systematic-careless",
+      "group": "q3-distribution-systematic",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-distribution-incidental-clean",
+      "group": "q3-distribution-incidental",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-distribution-incidental-lucky",
+      "group": "q3-distribution-incidental",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-distribution-incidental-careless",
+      "group": "q3-distribution-incidental",
+      "expected": [
+        "distribution"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-signed-systematic-clean",
+      "group": "q3-signed-systematic",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "8"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-signed-systematic-lucky",
+      "group": "q3-signed-systematic",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "8"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-signed-systematic-careless",
+      "group": "q3-signed-systematic",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "8"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-signed-incidental-clean",
+      "group": "q3-signed-incidental",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-signed-incidental-lucky",
+      "group": "q3-signed-incidental",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "signed"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-signed-incidental-careless",
+      "group": "q3-signed-incidental",
+      "expected": [
+        "signed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-balance-systematic-clean",
+      "group": "q3-balance-systematic",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q3-balance-systematic-lucky",
+      "group": "q3-balance-systematic",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-balance-systematic-careless",
+      "group": "q3-balance-systematic",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q3-balance-incidental-clean",
+      "group": "q3-balance-incidental",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q3-balance-incidental-lucky",
+      "group": "q3-balance-incidental",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-balance-incidental-careless",
+      "group": "q3-balance-incidental",
+      "expected": [
+        "balance"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "balance"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q3-mixed-systematic-clean",
+      "group": "q3-mixed-systematic",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-mixed-systematic-lucky",
+      "group": "q3-mixed-systematic",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-mixed-systematic-careless",
+      "group": "q3-mixed-systematic",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6.5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q3-mixed-incidental-clean",
+      "group": "q3-mixed-incidental",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-mixed-incidental-lucky",
+      "group": "q3-mixed-incidental",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": "distribution"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-mixed-incidental-careless",
+      "group": "q3-mixed-incidental",
+      "expected": [
+        "mixed"
+      ],
+      "hidden": {
+        "weakSkills": [
+          "distribution",
+          "signed"
+        ],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 3",
+          "correct": false
+        },
+        "p2": {
+          "answer": "17",
+          "correct": false
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q3-slip-systematic-clean",
+      "group": "q3-slip-systematic",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "clean",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-slip-systematic-lucky",
+      "group": "q3-slip-systematic",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "lucky",
+        "initialMode": "systematic",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-slip-systematic-careless",
+      "group": "q3-slip-systematic",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "careless",
+        "initialMode": "systematic",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "5"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    },
+    {
+      "id": "q3-slip-incidental-clean",
+      "group": "q3-slip-incidental",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "clean",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-slip-incidental-lucky",
+      "group": "q3-slip-incidental",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "lucky",
+        "initialMode": "incidental",
+        "flippedSkill": null
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11 - 4",
+          "correct": true
+        }
+      }
+    },
+    {
+      "id": "q3-slip-incidental-careless",
+      "group": "q3-slip-incidental",
+      "expected": [
+        "slip"
+      ],
+      "hidden": {
+        "weakSkills": [],
+        "regime": "careless",
+        "initialMode": "incidental",
+        "flippedSkill": "balance"
+      },
+      "initial": {
+        "question": "4(x + 2) = 24 を解いてください。",
+        "correctAnswer": "4",
+        "studentAnswer": "6"
+      },
+      "responses": {
+        "p1": {
+          "answer": "4y + 12",
+          "correct": true
+        },
+        "p2": {
+          "answer": "7",
+          "correct": true
+        },
+        "p3": {
+          "answer": "11のまま",
+          "correct": false
+        }
+      }
+    }
+  ],
+  "assumptions": [
+    "Five balanced latent profiles; an additional unknown output is permitted.",
+    "Three fixed equations, two initial-error modes, three probe-response regimes yield 90 scenarios in 30 paired groups.",
+    "clean uses deterministic skill mastery; lucky flips one weak skill to correct; careless flips one mastered skill to wrong. These are stress scenarios, not population frequencies.",
+    "Mixed profiles have two weaknesses. One probe cannot in general identify the entire profile.",
+    "Incidental initial errors can occur in any latent profile. Latent truth is not uniquely identifiable from every observable transcript.",
+    "No learning occurs during the probe; this measures diagnosis under an authored simulator, not learning gains."
+  ]
+}
