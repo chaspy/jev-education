@@ -48,3 +48,8 @@ npm run benchmark:luna:mae
 モデル用リクエスト全候補とソースのハッシュを実行前に記録。
 `calls.jsonl`にはJev形式の元入力、OpenAIへの実リクエスト、APIレスポンスを保存。
 `predictions.jsonl`と`summary.json`でケース別・全体を比較できる。
+
+## 初回測定結果
+
+[精度・confidence・応答時間・コストの比較](RESULTS.md)。
+模擬実験は完了。MaEは確率合計の不整合により途中停止し、生の応答と停止理由を保存しました。

@@ -1,0 +1,8 @@
+{
+  "status": "stopped_on_invalid_output",
+  "receivedCalls": 6,
+  "totalCostUsd": 0.00630734,
+  "inputTokens": 14251,
+  "outputTokens": 3920,
+  "note": "Includes invalid outputs; not an accuracy or representative latency estimate."
+}

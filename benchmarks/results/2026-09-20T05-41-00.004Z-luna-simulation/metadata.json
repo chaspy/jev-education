@@ -1,0 +1,55 @@
+{
+  "runId": "2026-09-20T05-41-00.004Z-luna-simulation",
+  "suite": "simulation",
+  "reference": "2026-09-20T05-30-46.640Z-simulation",
+  "startedAt": "2026-09-20T05:41:00.005Z",
+  "protocol": {
+    "version": 1,
+    "model": "gpt-5.6-luna",
+    "reasoningEffort": "medium",
+    "maxOutputTokens": 8192,
+    "api": "Responses, strict JSON Schema, store=false",
+    "sameInputs": "Reuse frozen Jev state, instructions, criteria, candidate order and data split. Add only a generic interface adapter developer message.",
+    "schema": "answers.<questionId> contains type=choice, choice, probabilities for every candidate, confidence. Usage and latency are measured API metadata, not generated.",
+    "confidence": "Luna probabilities/confidence are generated self-reports; not Jev internals or established comparable calibration. Same numeric thresholds are reported for compatibility only.",
+    "simulation": {
+      "reference": "2026-09-20T05-30-46.640Z-simulation",
+      "fixedEvidence": "Replay all 43 unique Jev requests exactly, then score the same 90 scenarios using Jev-selected probes",
+      "adaptive": "Use Luna probe choice, same frozen response table, and unchanged followupRequest. Additional requests only for new selected branches.",
+      "forcedRanking": "Also report five-profile rank after excluding unknown, matching prior supplemental analysis"
+    },
+    "mae": {
+      "reference": "2026-09-20T05-02-52.774Z-mae",
+      "split": "Same test 151; dev 30 unchanged and not used for prompting/tuning"
+    },
+    "cache": "One call per exact request within run; reuse identical results across scenarios",
+    "concurrency": 4,
+    "failurePolicy": "Stop scheduling on first failure, await already in-flight calls, preserve raw results including invalid outputs; no retry, normalization, fabricated predictions or alternative model",
+    "pricingUsdPerMillion": {
+      "input": 0.2,
+      "cachedInput": 0.02,
+      "output": 1.2
+    },
+    "pricingSource": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "pricingCaveat": "Estimate from reported usage; does not add cache-write charges not separately exposed in usage",
+    "tuning": "Adapter, schema and protocol frozen before the first inference. No task-specific prompt tuning on dev or test.",
+    "limitations": [
+      "Synthetic profiles can be unidentifiable from observations",
+      "Cached cases are not independent repetitions",
+      "MaE source labels can overlap or be inconsistent",
+      "Historical Jev calls are reused rather than rerun concurrently",
+      "Luna identifier is an alias, not a dated immutable snapshot",
+      "Same JSON schema does not recreate Jev training or confidence semantics"
+    ]
+  },
+  "gitRevision": "e6ada3734591985ca7a6a0ed586119a75bb3f99f",
+  "originalRequestSetSha256": "f99a75264a8ce8e3df41ae459f4803b58aea5cdde595ab4e2f8c476376283a36",
+  "possibleOpenAIRequestSetSha256": "fe540e8f76210a52048fb84bd86250ee2a65c0b5a971438c715a2298590c6400",
+  "referencePredictionsSha256": "a30487388054c577bb7419f4df133f306181fce09caed4e2bf4ef9a28d10eb61",
+  "sourceFiles": {
+    "adapter.mjs": "1a329f76a6b3a127c3320596c1e5c68cd693f98e7dc3829f306e3063740fed32",
+    "run.mjs": "cc29a0349d78ed6244c7450be803485a0b2d298eda39d5ef78e56fa4700f8af1",
+    "../simulation/core.mjs": "7504c4adab4194ff7dc8acf6836cc65e0dfe1f1c39662290f9feec0f19835bd9",
+    "../metrics.mjs": "3d75b4a20df6bbadd9b5e14ab428ea6ec238820ad81253d52984f06d3f6e815a"
+  }
+}
