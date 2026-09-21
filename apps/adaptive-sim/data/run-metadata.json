@@ -1,0 +1,12 @@
+{
+  "startedAt": "2026-09-20T08:47:36.333Z",
+  "gitRevision": "5f2c9e1c2ce6edf742bedd7cba66029fff48ae04",
+  "model": "jev-1.13.0",
+  "hashes": {
+    "apps/adaptive-sim/public/engine.js": "184744baf7ff8d5305514b9856180245686fbee09095edc9638bfb9848ddfcd3",
+    "apps/adaptive-sim/public/questions.js": "ffd94a34b799925fa842e0bde150dda9e2308d4c991f6deda7b0ad97a083680b",
+    "apps/adaptive-sim/public/curriculum.json": "6257b8717ac88f08bfc19fe9faf146a9602c3ba42de12a4d12a9d14113aaf502",
+    "apps/adaptive-sim/data/protocol.json": "91839d6e4725eed2c8000ec2895c111566b24d5aca30a8a696516a05a0f92a32",
+    "scripts/adaptive-sim/run.mjs": "386093aa99300937cd1f98a4fc0b81057e1f8e3fef930d0787c1dbf24cb2f4ac"
+  }
+}

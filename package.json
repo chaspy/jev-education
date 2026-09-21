@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "node --env-file=.env scripts/dev.mjs",
     "start": "npm run dev",
-    "test": "node --test apps/learning-path/test/*.test.mjs apps/benchmark-explorer/test/*.test.mjs benchmarks/test/*.test.mjs",
-    "build": "wrangler deploy --dry-run --outdir dist --config apps/learning-path/wrangler.jsonc && npm run explorer:check && npm run lesson-fit:check",
+    "test": "node --test apps/learning-path/test/*.test.mjs apps/benchmark-explorer/test/*.test.mjs benchmarks/test/*.test.mjs apps/adaptive-sim/test/*.test.mjs",
+    "build": "wrangler deploy --dry-run --outdir dist --config apps/learning-path/wrangler.jsonc && npm run explorer:check && npm run lesson-fit:check && npm run adaptive:check",
     "deploy": "wrangler deploy --config apps/learning-path/wrangler.jsonc",
     "benchmark:prepare": "node benchmarks/prepare.mjs",
     "benchmark:mae": "node --env-file=.env benchmarks/run.mjs mae",
@@ -28,7 +28,11 @@
     "lesson-fit:check": "npm run lesson-fit:build && wrangler deploy --dry-run --outdir dist/lesson-fit --config apps/lesson-fit/wrangler.jsonc",
     "lesson-fit:dev": "npm run lesson-fit:build && wrangler dev --config apps/lesson-fit/wrangler.jsonc --port 4324",
     "lesson-fit:deploy": "npm run lesson-fit:build && wrangler deploy --config apps/lesson-fit/wrangler.jsonc",
-    "kev:start": "bash scripts/kev/start.sh"
+    "kev:start": "bash scripts/kev/start.sh",
+    "adaptive:build": "node scripts/adaptive-sim/build.mjs",
+    "adaptive:check": "npm run adaptive:build && wrangler deploy --dry-run --outdir dist/adaptive --config apps/adaptive-sim/wrangler.jsonc",
+    "adaptive:dev": "npm run adaptive:build && wrangler dev --config apps/adaptive-sim/wrangler.jsonc --port 4325",
+    "adaptive:deploy": "npm run adaptive:build && wrangler deploy --config apps/adaptive-sim/wrangler.jsonc"
   },
   "devDependencies": {
     "wrangler": "4.135.0"
